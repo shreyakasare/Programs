@@ -1,0 +1,256 @@
+1) Hoisting of var
+
+JavaScript only hoists declarations, not initializations.
+
+Hoisting is a JavaScript mechanism where variables and function 
+declarations are moved to the top of their scope before code execution. 
+JavaScript only hoists declarations, not initialisation.
+This means that if we do this:
+
+console.log (greeter);
+var greeter = "say hello"
+
+it is interpreted as this:
+
+var greeter;
+console.log(greeter); // greeter is undefined
+greeter = "say hello"
+
+carName = "Volvo";
+let carName;
+O/P VM101:1 Uncaught ReferenceError: Cannot access 
+'carName' before initialization
+
+carName = "Volvo";
+const carName;
+O/P Uncaught SyntaxError: Missing initializer in 
+const declaration
+
+----------------------------------------------------
+
+2) Closure
+
+Inner function can have access to the outer function 
+variables as well as all the global variables.
+
+The closure has three scope chains.
+
+1) Own scope where variables defined between its curly 
+brackets
+2) Outer function's variables
+3) Global variables
+
+
+function Welcome(name) {
+  var greetingInfo = function (message) {
+    console.log(message + " " + name);
+  };
+  return greetingInfo;
+}
+var myFunction = Welcome("John");
+myFunction("Welcome "); //Output: Welcome John
+myFunction("Hello Mr."); //output: Hello Mr. John
+
+----------------------------------------------------
+
+3) es6 ques
+
+> What is the difference between let and var?
+
+let:
+
+Block-scoped: The variable is only available within the block {} 
+where it is defined.
+Not hoisted: Variables are not initialized until the declaration 
+is encountered.
+Allows reassignment but not redeclaration in the same scope.
+
+var:
+
+Function-scoped: The variable is available within the entire function 
+where it is defined.
+Hoisted: Variables are hoisted to the top of their function or 
+global context and initialized with undefined.
+Allows both reassignment and redeclaration in the same scope.
+
+
+> How do arrow functions differ from traditional functions?
+Arrow function
+==============
+
+Great for a quick one-line functions. Has no 
+'this' keyword.
+Arrow functions have a shorter syntax.
+Arrow functions do not have their own this context; 
+they inherit this from the surrounding lexical context
+
+const calcAge = birthYear => 2037 - birthYear;
+
+> What is a template literal (template strings) and how is it used?
+Answer: Template literals are enclosed by backticks (`) and 
+allow for embedded expressions and multi-line strings. 
+They support interpolation and tagged template literals.
+
+const name = 'Alice';
+const age = 25;
+
+// Interpolation
+const greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+
+// Multi-line string
+const multiLine = `This is a string
+that spans multiple lines.`;
+
+> What is destructuring assignment?
+allows you to unpack values from arrays or properties from objects 
+into distinct variables.
+
+Array Destructuring:
+const [a, b] = [1, 2];
+console.log(a); // 1
+console.log(b); // 2
+
+Object Destructuring:
+
+const { name, age } = { name: 'Alice', age: 25 };
+console.log(name); // Alice
+console.log(age); // 25
+
+> What are default parameters, and how do you use them?
+Answer: Default parameters allow you to specify default values 
+for function parameters if no value or undefined is provided.
+
+Example:
+
+function greet(name = 'Guest') {
+  console.log(`Hello, ${name}!`);
+}
+
+greet(); // Hello, Guest!
+greet('Alice'); // Hello, Alice!
+
+> What are the rest and spread operators
+
+. rest operator
+Used in function parameters and array destructuring.
+
+Example:
+
+function sum(...numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+
+. Spread Operator (...): Expands an array or object into individual 
+elements. Used in function calls and array/object literals.
+
+const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5]; // [1, 2, 3, 4, 5]
+
+const obj = { name: 'Alice', age: 25 };
+const newObj = { ...obj, city: 'New York' }; // { name: 'Alice', age: 25, city: 'New York' }
+
+
+> The Promise object represents the eventual completion (or failure) 
+of an asynchronous operation and its resulting value.
+
+A Promise is an object representing the eventual completion 
+(or failure) of an asynchronous operation and its resulting value. 
+Promises are used to handle asynchronous operations more effectively than callbacks.
+
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Data received');
+  }, 1000);
+});
+
+promise.then(result => {
+  console.log(result); // Data received
+}).catch(error => {
+  console.error(error);
+});
+
+
+> What are modules, and how do you use them in ES6?
+Answer: ES6 modules allow you to export and import code between files. 
+They help in organizing and managing dependencies in JavaScript 
+applications.
+
+
+4) Promise
+Promise
+========
+
+> A promise has three states: pending, fulfilled, and rejected.
+> resolve is used when you want your promise to succeed, and 
+reject is used when you want it to fail. 
+
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+
+> Promises are most useful when you have a process that takes an 
+unknown amount of time in your code (i.e. something asynchronous), 
+often a server request. 
+
+> When you make a server request it takes some amount of time, 
+and after it completes you usually want to do something with 
+the response from the server. 
+This can be achieved by using the `then` method. 
+The `then` method is executed immediately after your promise 
+is fulfilled with resolve. Here’s an example:
+
+myPromise.then(result => {
+  
+});
+
+> catch is the method used when your promise has been rejected. It is executed immediately 
+after a promise's reject method is called.
+myPromise.catch(error => {
+  
+});
+
+ Use Callbacks when working with simple asynchronous 
+operations, legacy code, or libraries that use callbacks. 
+They are straightforward but can become cumbersome with 
+deep nesting and error handling.
+
+Use Promises for more complex asynchronous flows, better 
+error handling, and improved readability. Promises provide 
+a more manageable and modern approach to handling asynchronous code.
+
+=============================================================
+
+> Scope
+
+Local variables have Function Scope:
+
+They can only be accessed from within the function.
+
+> anonymous function
+
+function sayHello() {
+  var say = function() { console.log(hello); }
+  // Local variable that ends up within the closure 
+  var hello = 'Hello, world!';
+  return say;
+}
+var sayHelloClosure = sayHello(); 
+sayHelloClosure(); // ‘Hello, world!’
+
+> module
+JavaScript Modules enables you to divide your code into 
+multiple files which makes it easier to maintain a code-base.
+
+Typically handle functionality and logic, and can be used 
+across different parts of an application.
+
+
+To learn
+=========
+
+anonymous function, lexical scoping,

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them falls within the range.
+
+    // Write a JavaScript program to check whether
+    // a given integer is within 20 of 100 or 400.
+
+    function pairOfNum(x) {
+      return Math.abs(100 - x) <= 20 || Math.abs(400 - x) <= 20;
+    }
+
+    console.log("testhundred", pairOfNum(10));
+    console.log("pairOfNum", pairOfNum(90));
+    console.log("pairOfNum", pairOfNum(99));
+    console.log("pairOfNum", pairOfNum(199));
+    console.log("pairOfNum", pairOfNum(200));
+
+    // Write a JavaScript program to compute the sum of
+    // the two given integers.
+    // If the two values are the same, then return triple
+    // their sum.
+
+    function sumOfInt(n, m) {
+      if (n === m) {
+        return 3 * (n + m);
+      } else {
+        return n + m;
+      }
+    }
+
+    console.log(sumOfInt(2, 4));
+    console.log(sumOfInt(2, 2));
+
+    // Random number
+
+    const num = Math.ceil(Math.random() * 10);
+    console.log(num, "Number");
+    console.log(Math.random(), "Math.random()");
+    console.log(Math.random() * 10, "Math.random() * 10");
+
+    const gnum = prompt("Guess the no between 1 to 10");
+    if (gnum === num) {
+      alert("Good Work");
+    } else {
+      alert("Not Matched" + num);
+    }
+
+    // Positive negative number
+
+    // Write a JavaScript program to check two given integers
+    // whether one is positive and another one is negative.
+
+    function numPosNeg(n, m) {
+      if ((n, m > 0)) {
+        console.log("Both numbers are positive");
+      } else if ((n > 0 && m < 0) || (n < 0 && m > 0)) {
+        console.log("One number is positive and the other is negative");
+      } else if (n < 0 || m < 0) {
+        console.log("Both numbers are negative");
+      }
+    }
+
+    console.log(numPosNeg(3, 2));
+    console.log(numPosNeg(-3, 2));
+    console.log(numPosNeg(-3, -2));
+    console.log(numPosNeg(3, -2));
+
+    //  Write a JavaScript program to check whether a given
+    //  positive number is a multiple of 3 or 7.
+    function checkNum(num) {
+      if (num % 3 === 0 || num % 7 === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    console.log("checkNum", checkNum(3));
+    console.log("checkNum", checkNum(7));
+    console.log("checkNum", checkNum(15));
+    console.log("checkNum", checkNum(98));
+    console.log("checkNum", checkNum(97));
+    console.log("checkNum", checkNum(100));
+    console.log("checkNum", checkNum(12));
+    console.log("checkNum", checkNum(14));
+    console.log("checkNum", checkNum(10));
+    console.log("checkNum", checkNum(11));
+
+    // Q Write a JavaScript program to get the difference between a
+    // given number and 13, if the number is broader than 13 return double the absolute difference.
+
+    // Define a function named difference that takes a parameter n
+    function difference(n) {
+      // Check if n is less than or equal to 13
+      if (n <= 13) {
+        // If true, return the difference between 13 and n
+        return 13 - n;
+      } else {
+        return (n - 13) * 2; // If false, return the double of the difference between n and 13
+      }
+    }
+
+    console.log(difference(32)); // 38
+    console.log(difference(11)); // 2
+
+    // Write a JavaScript program to compute the absolute
+    // difference between a specified number and 19.
+    // Returns triple the absolute difference if the
+    // specified number is greater than 19.
+
+    function absNumber(n) {
+      let diff = n - 19;
+      return diff < 19 ? diff : 3 * diff;
+      //   if (n <= 19) {
+      //     return n - 19;
+      //   } else {
+      //     return 3 * (n - 19);
+      //   }
+      // let diff = Math.abs(n - 19);
+      // return diff > 19? 3 * diff : diff;
+    }
+
+    console.log(absNumber(7));
+    console.log(absNumber(20));
+
+    // Write a JavaScript program to check a pair of
+    // numbers and return true if one of the numbers
+    // is 50 or if their sum is 50.
+
+    function pairOfNum(n, m) {
+      if (n === 50 || m === 50 || n + m === 50) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    console.log("pairOfNum :>> ", pairOfNum(50, 50));
+    console.log("pairOfNum1 :>> ", pairOfNum(5, 5));
+
+    // Write a JavaScript program to check whether two given integer values are in the
+    // range 50..99 (inclusive). Return true if either of them falls within the range.
+
+    function checkRange(a, b) {
+      if ((a <= 50 && a >= 99) || (b >= 50 && b <= 99)) {
+        return true;
+      } else return false;
+    }
+
+    console.log(checkRange(50, 90));
+    console.log(checkRange(40, 20));
+
+    // Write a JavaScript program to check whether a string "Script"
+    // appears at the 5th (index 4) position in a given string. If "Script" appears
+    // in the string, return the string without "Script" otherwise return the original one.
+
+    function checkString(str) {
+      if (str.toLocaleLowerCase().substr(4) === "script") {
+        return str.substr(0, 4);
+      } else {
+        return str;
+      }
+    }
+
+    console.log(checkString("JavaScript"));
+    console.log(checkString("CoffeeScript"));
+
+    // JavaScript   Java
+    // CoffeeScript CoffeeScript
+
+    // Write a JavaScript program to check whether two
+    // numbers are in the range 40..60 or 70..100 inclusive.
+
+    function checkNumRange(a, b) {
+      if (
+        (a >= 40 && a <= 60 && b >= 40 && b <= 60) ||
+        (a >= 70 && a <= 100 && b >= 70 && b <= 100)
+      ) {
+        return true;
+      } else return false;
+    }
+
+    console.log(checkNumRange(40, 60));
+    console.log(checkNumRange(50, 90));
+    console.log(checkNumRange(44, 56));
+    console.log(checkNumRange(70, 95));
+    console.log(checkNumRange(50, 89));
+
+    // Write a JavaScript program that
+    // checks whether the last digit of three positive integers is the same.
+
+    function lastDigitSame(a, b, c) {
+      if (a > 0 && b > 0 && c > 0) {
+        return a % 10 == b % 10 && b % 10 == c % 10 && a % 10 == c % 10;
+      } else {
+        return false;
+      }
+    }
+
+    console.log("lastDigitSame", lastDigitSame(20, 30, 400)); //true
+    console.log("lastDigitSame", lastDigitSame(-20, 30, 400)); //false
+    console.log("lastDigitSame", lastDigitSame(20, -30, 400)); //false
+    console.log("lastDigitSame", lastDigitSame(20, 30, -400)); //false
+
+    // Write a JavaScript program to compute the
+    // sum of the two given integers. If the sum is in the
+    // range 50..80 return 65 otherwise return 80.
+
+    function sumofTwoInt(a, b) {
+      let sum = a + b;
+      if (sum <= 50 || sum <= 80) {
+        return 65;
+      } else {
+        return 80;
+      }
+    }
+
+    console.log(sumofTwoInt(30, 20));
+    console.log(sumofTwoInt(90, 80));
+
+    // Write a JavaScript program to check from two given integers whether
+    //  one of them is 8 or their sum or difference is 8.
+
+    function checkNumInt(a, s) {
+      if (a === 8 || s === 8 || a + s === 8 || a - s === 8) {
+        return true;
+      } else return false;
+    }
+
+    console.log(checkNumInt(7, 8)); //true
+    console.log(checkNumInt(16, 8)); //true
+    console.log(checkNumInt(24, 32)); //true
+    console.log(checkNumInt(17, 18)); //false
+
+    // Write a JavaScript program to check a set of three numbers;
+    // if the three numbers are the same return 30; otherwise return 20;
+    // and if two numbers are the same return 40.
+
+    function checkThreeNum(a, b, c) {
+      if (a === b && b === c) {
+        return 30;
+      }
+      if (a == b || b == c || a == c) {
+        return 20;
+      }
+      return 40;
+    }
+
+    console.log(checkThreeNum(8, 8, 8)); //30
+    console.log(checkThreeNum(8, 8, 18)); //40
+    console.log(checkThreeNum(8, 7, 18)); //20
+
+    // Write a JavaScript program to check whether three given
+    // numbers are increasing in strict or in soft mode.
+    // Note: Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+
+    function checkNumOrder(a, b, c) {
+      if (a < b && b < c) {
+        return "Strict mode";
+      } else if (a > b && b < c) {
+        return "Soft mode";
+      }
+      return "Undefinded";
+    }
+
+    console.log(checkNumOrder(10, 15, 31)); //strict mode
+    console.log(checkNumOrder(24, 22, 31)); //Soft mode
+    console.log(checkNumOrder(50, 21, 15)); //Undefinded
+
+    // Write a JavaScript program to check from three given
+    // numbers (non negative integers) that two or all of
+    // them have the same rightmost digit.
+
+    function checkRightMostDigit(a, b, c) {
+      if (a > 0 && b > 0 && c > 0) {
+        let lastDigitA = a % 10;
+        let lastDigitB = b % 10;
+        let lastDigitC = c % 10;
+        if (
+          (lastDigitA === lastDigitB &&
+            lastDigitB === lastDigitC &&
+            lastDigitC === lastDigitA) ||
+          (lastDigitA === lastDigitB) === lastDigitC
+        ) {
+          return true;
+        } else return false;
+      }
+    }
+
+    console.log(checkRightMostDigit(22, 32, 42)); //true
+    console.log(checkRightMostDigit(102, 302, 2)); //true
+    console.log(checkRightMostDigit(20, 22, 45)); //false
+
+    // Write a JavaScript program that evaluates three given
+    // integers to determine if any one of them is greater than
+    // or equal to 20 and less than at least one of the other two.
+
+    function greaterNum(a, b, c) {
+      if (
+        (a >= 20 && a < b) ||
+        b < c ||
+        a < c ||
+        (b >= 20 && a < b) ||
+        b < c ||
+        a < c ||
+        (c >= 20 && a < b) ||
+        b < c ||
+        a < c
+      ) {
+        return true;
+      } else return false;
+    }
+
+    console.log("greaterNum", greaterNum(23, 45, 10)); //true
+    console.log(greaterNum(23, 23, 10)); //false
+    console.log(greaterNum(21, 66, 75)); //true
+
+    // Write a JavaScript program that checks two integer values
+    // and returns true if either one is 15 or if their sum or difference is 15.
+
+    function checkNum15(a, b) {
+      let sum = a + b,
+        diff = a - b;
+      if (a === 15 || b === 15 || sum === 15 || diff === 15) return true;
+      else return false;
+    }
+
+    console.log("checkNum15", checkNum15(15, 9)); //true
+    console.log(checkNum15(25, 15)); //true
+    console.log(checkNum15(7, 8)); //true
+    console.log(checkNum15(25, 10)); //true
+    console.log(checkNum15(5, 9)); //false
+    console.log(checkNum15(7, 9)); //false
+    console.log(checkNum15(9, 25)); //false
+
+    // Write a JavaScript program to check two given non-negative
+    // integers if one (not both) is a multiple of 7 or 11.
+
+    function checkMultiple(a, b) {
+      if (a && b > 0) {
+        if (a % 7 === 0 || b % 7 === 0 || a % 11 === 0 || b % 11 === 0)
+          return true;
+      }
+      return false;
+    }
+
+    console.log("checkMultiple", checkMultiple(14, 21)); //false
+    console.log(checkMultiple(14, 20)); //true
+    console.log(checkMultiple(16, 20)); //false
+
+    // Write a JavaScript program to check whether a given
+    // number exists in the range 40..10000.
+    // For example 40 presents in 40 and 4000
+
+    function checkNumRange45(num) {
+      if (num >= 40 && num <= 10000) return true;
+      else return false;
+    }
+
+    console.log("checkNumRange45", checkNumRange45(45)); //true
+    console.log(checkNumRange45(79)); //true
+    console.log(checkNumRange45(30)); //false
+
+    // Write a JavaScript application that transforms a provided
+    // numerical value into hours and minutes.
+
+    function time_convert(num) {
+      var hours = Math.floor(num / 60); // 71 / 60 = 1.1833333333333333 , hrs = 1
+      var minutes = num % 60; //11
+      return hours + " hours and " + minutes + " minutes";
+    }
+
+    console.log(time_convert(71));
+    console.log(time_convert(450));
+    console.log(time_convert(1441));
+
+    // Write a JavaScript program to divide two positive numbers and
+    // return the result as string with properly formatted commas.
+
+    function divideNumbers(num1, num2) {
+      let result = num1 / num2;
+      return result.toLocaleString("en", { maximumFractionDigits: 2 });
+    }
+
+    console.log(divideNumbers(1000000, 107)); //9,345.79  9,345.79
+
+    // Write a JavaScript program to create one string of
+    // specified copies (positive numbers) of a given string.
+
+    function repeatString(str, repNum) {
+      if (repNum > 0) {
+        let newS = str.repeat(repNum);
+        console.log(newS, "newS");
+      }
+      return false;
+    }
+
+    console.log(repeatString("abc", 5)); // abcabcabcabcabc
+    console.log(repeatString("abc", 0));
+    console.log(repeatString("abc", -2)); // false
+
+    // Write a JavaScript program to compute the sum of
+    // three elements of a given array of integers of length 3.
+
+    function sum_three(ele) {
+      return ele.reduce((acc, curr) => acc + curr, 0);
+      // return ele[0] + ele[1] + ele[2];
+    }
+    console.log(sum_three([10, 32])); //62
+    console.log(sum_three([5, 7, 9])); //21
+    console.log(sum_three([0, 8, -11])); //-3
+
+    // Write a JavaScript program to rotate the elements left in a given array
+    // of integers of length 3.
+
+    function rotate_elements_left(num) {
+      if (num.length === 3) {
+        return [num[1], num[2], num[0]];
+      }
+    }
+
+    console.log(rotate_elements_left([3, 4, 5])); //  [4,5,3]
+    console.log(rotate_elements_left([0, -1, 2])); //  [-1,2,0]
+    console.log(rotate_elements_left([7, 6, 5])); //  [6,5,7]
+
+    console.log(first_last_1([1, 3, 5])); //true
+    console.log(first_last_1([1, 3, 5, 1])); //true
+    console.log(first_last_1([2, 4, 6])); //false
+
+    // Write a JavaScript program to check whether 1 appears in the first or last
+    // position of a given array of integers. The array length must be larger than or equal to 1.
+
+    function first_last_1(numArr) {
+      if (numArr.length >= 1) {
+        return numArr[0] === 1 || numArr[numArr.length - 1] === 1
+          ? true
+          : false;
+      }
+    }
+
+    // Write a JavaScript program to check whether the first and last
+    // elements are the same in a given array of integers of length 3.
+
+    function first_last_same(ele) {
+      if (ele.length === 3) {
+        return ele[0] === ele[ele.length - 1] ? true : false;
+      }
+    }
+    console.log(first_last_same([10, 20, 30])); //false
+    console.log(first_last_same([10, 20, 30, 10])); //true
+    console.log(first_last_same([20, 20, 20])); //true
+
+    // Write a JavaScript program to reverse the elements of a given array of integers of length 3.
+    function reverse3(rev) {
+      return rev.reverse();
+    }
+    console.log(reverse3([5, 4, 3])); // Output: [3, 4, 5]
+    console.log(reverse3([1, 0, -1])); // Output: [-1, 0, 1]
+    console.log(reverse3([2, 3, 1])); // Output: [1, 3, 2]
+
+    //74. Write a JavaScript program to find the largest value between the first and last
+    // elements and set all the other elements to that value. Display the updated array.
+
+    function all_max(larNum) {
+      let maxNum = larNum[0];
+      let maxNum1 = larNum[larNum.length - 1];
+      let res = Math.max(maxNum, maxNum1);
+      return larNum.map(() => res);
+    }
+
+    console.log(all_max([20, 30, 40])); // Output: [40, 40, 40]
+    console.log(all_max([-7, -9, 0])); // Output: [0, 0, 0]
+    console.log(all_max([12, 10, 3])); // Output: [12, 12, 12]
+
+    // 75. Write a JavaScript program to create an array taking the
+    // middle elements of the two arrays of integer and each length 3.
+
+    function middle_elements(arr1, arr2) {
+      if (arr1 && arr2.length === 3) {
+        return [arr1[1], arr2[1]];
+      }
+    }
+
+    console.log(middle_elements([1, 2, 3], [1, 5, 6])); // Output: [2, 5]
+    console.log(middle_elements([3, 3, 3], [2, 8, 0])); // Output: [3, 8]
+    console.log(middle_elements([4, 2, 7], [2, 4, 5])); // Output: [2, 4]
+
+    // 76. Write a JavaScript program to create an array by taking the first and last
+    //  elements from a given array of integers. The length must be larger than or equal to 1.
+
+    function started(ele) {
+      return [ele[0], ele[ele.length - 1]];
+
+      //  OR
+
+      // var array1 = []; // Create an empty array to store the first and last elements
+      // array1.push(nums[0], nums[nums.length - 1]); // Add the first and last elements to the array
+      // return array1; // Return the array with the first and last elements
+    }
+
+    console.log(started([20, 20, 30])); // Output: [20, 30]
+    console.log(started([5, 2, 7, 8])); // Output: [5, 8]
+    console.log(started([17, 12, 34, 78])); // Output: [17, 78]
+
+    // 77. Write a JavaScript program to test whether an array of integers of length 2 contains 1 or 3.
+
+    function contains13(int) {
+      let arr = [];
+      arr.push(int.includes(1) || int.includes(3)) ? true : false;
+      console.log("arr :", arr);
+    }
+    console.log(contains13([1, 5])); // Should return true, as 1 is present
+    console.log(contains13([2, 3])); // Should return true, as 3 is present
+    console.log(contains13([7, 5])); // Should return false, as neither 1 nor 3 is present
+
+    // 78. Write a JavaScript program to test whether an array of integers of length 2 does not contain 1 or 3.
+
+    function notContains13(int) {
+      if (!int.includes(1) && !int.includes(3)) {
+        return true;
+      }
+      return false;
+    }
+    console.log("notContains13", notContains13([7, 8])); // true, as neither 1 nor 3 is present
+    console.log(notContains13([3, 2])); // false, as 3 is present
+    console.log(notContains13([0, 1])); // false, as 1 is present
+
+    // Write a JavaScript program to test whether a given array of integers
+    // contains 30 and 40 twice. The array length should be 0, 1, or 2.
+
+    function twice3040(int) {
+      if (int.length === 0 || int.length === 1 || int.length === 2) {
+        if (
+          (int[0] === 30 && int[1] === 30) ||
+          (int[0] === 40 && int[1] === 40)
+        ) {
+          return true;
+        }
+        return false;
+      }
+    }
+    console.log("twice3040", twice3040([30, 30])); // Should return true
+    console.log(twice3040([40, 40])); // Should return true
+    console.log(twice3040([20, 20])); // Should return false
+    console.log(twice3040([30])); // Should return false
+
+    // 81. Write a JavaScript program to add two digits to a given positive integer of length two.
+
+    function add_two_digits(num) {
+      let twoNum = num.toString().split("");
+      let sum = twoNum.reduce((acc, digit) => acc + parseInt(digit), 0);
+      return sum;
+    }
+    console.log(add_two_digits(25)); // Output: 7 (2 + 5)
+    console.log(add_two_digits(50)); // Output: 5 (5 + 0)
+
+    console.log(add_two_int_without_carrying(222, 911)); // Output: 133
+    console.log(add_two_int_without_carrying(200, 900)); // Output: 100
+
+    // 82. Write a JavaScript program to add two positive integers without carrying.
+
+    function add_two_int_without_carrying(a, b) {
+      while (b != 0) {
+        let carry = a & b;
+        a = a ^ b;
+        b = carry << 1;
+      }
+      return a;
+    }
+    console.log(add_two_int_without_carrying(222, 911)); // Output: 133
+    console.log(add_two_int_without_carrying(200, 900)); // Output: 100
+
+    // 85. Write a JavaScript program to divide a given array of positive
+    // integers into two parts. First element belongs to the first part,
+    // second element belongs to the second part, and third element
+    // belongs to the first part and so on.
+    // Now compute the sum of two parts and store it in an array of size two.
+
+    // console.log(alternate_Sums([1, 3, 6, 2, 5, 10])); // Output: [14, 8]
+
+    function divide_array(arr) {
+      let half = Math.round(arr.length / 2);
+      let firstPart = arr.slice(0, half);
+      let secondPart = arr.slice(half);
+      let sum = [
+        firstPart.reduce((acc, val) => acc + val, 0),
+        secondPart.reduce((acc, val) => acc + val, 0),
+      ];
+      return sum;
+    }
+    console.log(divide_array([1, 2, 3, 4, 5])); // Output: [6, 9]
+    console.log(divide_array([1, 3, 6, 2, 5, 10])); // Output: [14, 8]
+
+    //     86. Write a JavaScript program to find the types of a given angle.
+
+    // Types of angles:
+    // Acute angle: An angle between 0 and 90 degrees.
+    // Right angle: An 90 degree angle.
+    // Obtuse angle: An angle between 90 and 180 degrees.
+    // Straight angle: A 180 degree angle.
+
+    function angle_Type(num) {
+      debugger;
+      if (num < 90) return "Acute angle";
+      if (num === 90) return "Right angle";
+      if (num < 180) return "Obtuse angle";
+      if (num === 180) return "Straight angle";
+    }
+
+    console.log(angle_Type(47)); // Acute angle.
+    console.log(angle_Type(90)); // Right angle.
+    console.log(angle_Type(145)); // Obtuse angle.
+    console.log(angle_Type(180)); // Straight angle.
+
+    // Write a JavaScript program to determine if two arrays of integers of the same length
+    // are similar. The arrays will be similar if one array can
+    // be obtained from another array by swapping at most one pair of elements.
+
+    function array_checking(arr1, arr2) {
+      debugger;
+      if (arr1.length !== arr2.length) {
+        return false;
+      }
+
+      for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) {
+          return false; // Return false immediately if a mismatch is found
+        }
+      }
+      return true; // If no mismatches are found, return true
+    }
+
+    console.log("array_checking", array_checking([10, 20, 30], [10, 20, 30])); // true
+    console.log(array_checking([10, 20, 30], [30, 10, 20])); // true
+    console.log(array_checking([10, 20, 30, 40], [10, 30, 20, 40])); // false
+  </script>
+</html>

@@ -1,0 +1,177 @@
+Containers
+============
+
+a) Container in css is used to hold contents inside them. 
+With the help of Container we make our website responsive and fixed width.
+
+b) Containers have its two classes container class and Container-fluid class.
+
+c) Containers specially used for fixing the width of the Contents inside it.
+
+d) A container can be any HTML element, such as <div>, <section>, <article>, or <main>
+
+e) Creating layout structures: Containers are often used to create the main layout structure of 
+a web page. They can help divide the page into header, content, sidebar, and footer sections.
+
+
+CSS 
+====
+
+box,
+Grid > flex 
+
+>>> class ="w-1/2" width of 50%
+
+>>> <div className="bg-white-100 flex"> sets the content horizontally
+
+>>> p-5 padding 20 pixels to image div
+
+>>> mt-4 margin top 4
+
+>>> p-2 mt-8 padding 2 margin top 8
+
+>>> w-full width full
+
+>>> vw and vh 
+
+>>> box shadow
+ 
+ .faq {
+  grid-row: 2 / span 2;
+  grid-column: 1;
+  padding: min(7.5rem, 30vw) 1.5rem 2.5rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.62rem 1.87rem hsla(0, 0%, 0%, 0.2);
+}
+
+vh stands for viewport height. 
+This unit is based on the height of the viewport. 
+A value of 1vh is equal to 1% of the viewport height. 
+A value of 100vh is equal to 100% of the viewport height.
+
+1vw stands for viewport width. 
+This unit is based on the width of the viewport. 
+A value of 1vw is equal to 1% of the viewport width.
+
+vmin stands for viewport minimum. 
+This unit is based on the smaller dimension of the viewport. 
+If the viewport height is smaller than the width, the value of 1vmin will be equal to 1% of 
+the viewport height. 
+Similarly, if the viewport width is smaller than the height, the value of 1vmin will be equal 
+to 1% of the viewport width.
+
+vmax stands for viewport maximum. 
+This unit is based on the larger dimension of the viewport. 
+If the viewport height is larger than the width, the value of 1vmax will be equal to 1% of viewport height. 
+Similarly, if the viewport width is larger than the height, the value of 1vmax will be equal to 1% of 
+the viewport width.
+
+max-width
+==========
+
+The max-width property defines the maximum width of an element.
+
+If the content is larger than the maximum width, it will automatically change the height of the element.
+
+If the content is smaller than the maximum width, the max-width property has no effect.
+
+Note: This prevents the value of the width property from becoming larger than max-width. The value of the max-width property overrides the width property.
+
+
+rem 
+===
+
+Rem (short for “root-em”) 
+They are commonly used to set an element’s width and height.
+
+.article {
+  font-size: 18px;
+}
+p {
+  font-size: 2em; /* sets font size = 36px */
+}
+
+Assigning the p element a font size of 2em gives it an actual size of 36px — twice the 
+value of the article element’s font.
+
+
+Absolute
+========
+
+Absolute units specify a fixed length value. It doesn't matter if the screen's width or height 
+changes, the value will remain fixed.
+
+website
+=========
+
+https://coolors.co/
+
+https://codepen.io/ste-vg/pen/GqaZbo  : colors
+
+Shortcuts
+==========
+
+
+>>> Inline , external, internal css
+
+Inline will take the higher precedence.
+In <head> tag if 
+<style>
+p{
+color: rgb(245,184,245) !important;
+background-color:
+}
+</style>
+<link ref="stylesheet" href = "style.css">
+
+<link> tag will take the higher precedence.
+!important will take higher precedence
+
+
+Grouping
+
+  footer, span{
+        background-color: chocolate;
+      }
+
+em
+==
+
+ line-height: 8.3em;
+
+ a) CSS Fonts
+
+ b) The printing and typesetting industry.
+
+ the height between a and bs 
+
+
+
+>>> me-auto means "margin end auto". Which is actually:
+margin-right: auto
+me = margin-right and ms = margin-left
+
+>>> direction d-flex justify-content-center : 
+Use d-flex class to enable flexbox in bootstrap and align the items to the desired position.
+
+>>> The Bootstrap grid system has four classes: 
+xs (phones), sm (tablets), md (desktops), and lg (larger desktops).
+
+>>> By default, .btn-primary has white text on a blue background.
+
+>>> m - for classes that set margin
+    p - for classes that set padding
+    t - for classes that set margin-top or padding-top
+b - for classes that set margin-bottom or padding-bottom
+l - for classes that set margin-left or padding-left
+r - for classes that set margin-right or padding-right
+x - for classes that set both *-left and *-right
+y - for classes that set both *-top and *-bottom
+blank - for classes that set a margin or padding on all 4 sides of the element
+
+Color
+======
+
+background: linear-gradient(240deg, rgb(19 16 16 / 30%), rgb(112 112 124 / 0%)); 
+

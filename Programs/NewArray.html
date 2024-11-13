@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    // Creating a New Array using the Existing Array/List
+
+    // map
+    // var fruits = ["apple", "mango", "watermelon", "orange"];
+    // var fruits_leng = fruits.map((ele) => ele.length);
+    // // console.log("Fruits length", fruits_leng);
+
+    // // Output [ 5, 5, 11, 6 ]
+
+    // // Creating a New Array after Filtering the Existing Array
+    // // filter
+    // const even_fruits_length = fruits.filter((ele) => ele.length % 2 !== 0);
+    // // console.log("even_fruits_length", even_fruits_length); //['apple', 'mango']
+
+    // // Find an Element based on Specific Conditions
+    // var data = fruits.filter((element) => element.length > 6);
+    // // console.log("even_fruits_length", data); //['watermelon']
+
+    // var findFruitsLength = fruits.find((ele) => ele.length > 6);
+    // // console.log("Find Fruits Length", findFruitsLength); //watermelon
+
+    // var indexOfPartEle = fruits.findIndex((ele) => ele.length > 6);
+    // // console.log("Index of particular element", indexOfPartEle); // 2
+
+    // var redArr = [1, 2, 3, 4, 5];
+    // var redNewArr = redArr.reduce((ele, acc) => ele + acc);
+    // // console.log("Reduce New Array", redNewArr); // 15
+
+    // var shiftArr = redArr.shift(); //Removes first element fron an array
+    // // console.log("Shift Array", shiftArr); //          1
+    // // console.log("Remaining Elements", redArr); //           [2,3,4,5]
+
+    // var unShArr = redArr.unshift(-1, 0);
+    // // console.log("Unshift Array", unShArr);
+    // // console.log("New Unshifted Array", redArr);
+
+    // var popArr = redArr.pop();
+    // // console.log("Popped Array", popArr);
+    // // console.log("New Popped Array", redArr);
+
+    // var pushArr = redArr.push(6, 7);
+    // // console.log("Push Element", pushArr);
+    // // console.log("New Pushed Array", redArr);
+
+    // const checkApprox = (num1, num2, epsilon) => {
+    //   return Math.abs(num1 - num2) < epsilon;
+    // };
+    // // console.log("Check Approx", checkApprox(10.003, 10.001, 0.005));
+
+    // // Sorting an Array
+    // const numbers = [102, -1, 2];
+    // numbers.sort((a, b) => a - b);
+    // // console.log("numbers", numbers);
+
+    // let a = {};
+    // let b = { key: "b" };
+    // let c = { key: "c" };
+
+    // a[b] = 123;
+    // a[c] = 456;
+
+    // // console.log(a[b], "a[b]");
+    // // o/p 456
+
+    // const obj = {
+    //   d: "foo",
+    //   e: function () {
+    //     console.log(this.d);
+    //   },
+    // };
+
+    // const f = obj.e;
+
+    // obj.e();
+    // f();
+    // // o/p foo
+    // // undefined;
+
+    // let x = 1;
+
+    // if (function f() {}) {
+    //   x += typeof f;
+    // }
+
+    // // console.log(x);
+
+    // let aa = { x: 1 };
+    // let bb = { x: 2 };
+    // let cc = { x: 3 };
+    // let dd = { x: 4 };
+    // let ee = { x: 5 };
+    // let arr = [aa, bb, cc, dd, ee];
+
+    // arr.forEach((obj) => (obj.x = obj.x * 2));
+
+    // console.log(aa.x, bb.x, cc.x, dd.x, ee.x);
+
+    // Write a JavaScript function that takes an array of numbers as input and returns a new array containing
+    // only the even numbers.
+
+    // let input = [1, 2, 3, 4, 5, 6];
+
+    // console.log(input, "input");
+
+    // let i;
+    // let even = [];
+    // for (i = 0; i <= input.length; i++) {
+    //   if (i % 2 == 0) {
+    //     even.push(i);
+    //     console.log("Even", even);
+    //   }
+    // }
+
+    // const fruits = ["banana", "apple", "orange", "grape", "kiwi"];
+    // let f = fruits.sort();
+    // let r = fruits.sort().reverse();
+    // console.log(f, "F");
+    // console.log(r, "R");
+
+    // let s = r.sort((a, b) => a.length - b.length);
+    // console.log(s, "s");
+    // Task 1: Sort the array of fruits in alphabetical order (default behavior)
+    // Task 2: Sort the array of fruits in descending alphabetical order
+    // Task 3: Sort the array of fruits based on the length of the fruit names in ascending order
+    // Task 4: Sort the array of fruits in ascending order by the second character of each fruit name
+
+    // let inp = [4, 6, 8, 10];
+    // let add = inp.reduce((a, b) => a + b);
+    // console.log(add, "Add");
+
+    // const obj = {
+    //   a: 1,
+    //   b: 2,
+    //   c: {
+    //     a: 3,
+    //     b: 4,
+    //   },
+    // };
+
+    // const {
+    //   a,
+    //   b,
+    //   c: { a: nestedA },
+    // } = obj;
+
+    // console.log(a, b, nestedA);
+
+    // const person = {
+    //   name: "John",
+    //   age: 30,
+    // };
+
+    // Object.freeze(person);
+    // person.age = 40;
+
+    // console.log(person.age);
+
+    // const companies = [
+    //   { id: "1", name: "Facebook" },
+    //   { id: "2", name: "Apple" },
+    //   { id: "3", name: "Google" },
+    // ];
+
+    // companies.sort((a, b) => (a.name > b.name ? -1 : 1));
+    // console.log(companies);
+
+    // const a = [1, 2, 3];
+    // const b = a;
+
+    // b.push(4);
+
+    // console.log(a);
+    // console.log(b);
+    debugger;
+    const x = 10;
+
+    function foo() {
+      console.log(x);
+      const x = 20;
+    }
+
+    foo();
+    // o/p Uncaught ReferenceError: Cannot access 'x' before initialization
+  </script>
+</html>

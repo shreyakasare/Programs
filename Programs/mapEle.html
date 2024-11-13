@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    test
+    <p>
+      In this approach we will directly pick up the <abbr>object key</abbr> and
+      will change the name of that picked key with the name provided by the
+      user. After providing the key name we will then delete the previously
+      declared one and replace it with new one. The only thing you could notice
+      here is that the position of the object gets changed, but its value
+      remains preserved and same too.
+    </p>
+
+    <div class="message">Hello World</div>
+    <div class="secondprog"></div>
+    <div class="arr">Object</div>
+
+    <section>
+      <h2>Delete :</h2>
+      The delete operator removes a property from an object.
+    </section>
+
+    <p id="demo">Object.keys()</p>
+    <a href="https://www.w3schools.com/jsref/jsref_object_keys.asp"
+      >Object.keys()</a
+    >
+    <a
+      href="https://www.geeksforgeeks.org/how-to-get-the-first-non-null-undefined-argument-in-javascript/"
+      >Null undefined</a
+    >
+    <article class="forecast">
+      <h3>Weather forecase for Seattle</h3>
+      <article class="day-forecast">
+        <h4>03 March 2018</h4>
+        <p>Rain</p>
+      </article>
+      <article class="day-forecast">
+        <h4>04 March 2018</h4>
+        <p>Periods of rain</p>
+      </article>
+      <article class="day-forecast">
+        <h4>05 March 2018</h4>
+        <p>Heavy rain</p>
+      </article>
+    </article>
+
+    <address>
+      Email: <a href="mailto:shreyakasare8@gmail.com">shreyakasare8@gmail.com</a
+      ><br />
+      Phone: <a href="tel:+919874563310">+91 9874563210</a>
+    </address>
+  </body>
+  <script>
+    const divMessage = (document.querySelector(".message").textContent =
+      "1) How to replace the names of multiple object keys with the values provided using JavaScript ?");
+
+    const second = (document.querySelector(".secondprog").textContent =
+      "2) How to get the first non-null/undefined argument in JavaScript ?");
+    console.log(divMessage.textContent); // Hello World
+    // divMessage.textContent = "Hif World"; // Change text to Hi World
+
+    let object = {
+      name: "Hello",
+      age: 20,
+      gender: "Male",
+    };
+
+    let renameObjKey = (object) => {
+      object.FirstName = object.name;
+      object.neage = object.age;
+      delete object.name;
+      delete object.age;
+    };
+    renameObjKey(object);
+
+    console.log(object, "Object");
+    const neArr = (document.querySelector(".arr").textContent = object.neage);
+
+    const object1 = {
+      name: "Hello",
+      age: 25,
+      gender: "Female",
+    };
+
+    let renameKeys = (keysMap, object1) =>
+      Object.keys(object1).reduce(
+        (acc, key) => ({
+          ...acc,
+          ...{ [keysMap[key] || key]: object[key] },
+        }),
+        {}
+      );
+
+    let result = renameKeys({ name: "FirstName" }, object);
+    console.log(result, "result");
+    let n = Object.keys(object1);
+    document.getElementById("demo").innerHTML = n;
+
+    function coalesce() {
+      for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] != null) {
+          return arguments[i];
+        }
+      }
+    }
+
+    console.log(coalesce(null, undefined, "First", 1, 2, 3, null));
+
+    const coalesceES6 = (...args) =>
+      args.find((_) => ![null, undefined].includes(_));
+    console.log(
+      "coalesceES6",
+      coalesceES6(null, undefined, "Value one", 1, 2, 3, null)
+    );
+
+    let products = [
+      {
+        id: 1,
+        desc: `The best in class toaster that has 140
+        watt power consumption with nice features that
+        roast your bread just fine. Also comes bundled
+        in a nice cute case.`,
+        summ: `Get world class breakfasts`,
+      },
+      {
+        id: 2,
+        desc: `A massager that relieves all your pains
+        without the hassles of charging it daily
+        or even hourly as it comes packed with Li-Ion
+        batteries that last upto 8 hrs.`,
+        summ: "Warm comfort for your back",
+      },
+      {
+        id: 3,
+        desc: `An air conditioner with a difference that
+        not only cools your room to the best temperatures
+        but also provides cleanliness and disinfection at
+        best in class standards`,
+        summ: null,
+      },
+    ];
+
+    const coalesceES61 = (...args) =>
+      args.find((_) => ![null, undefined].includes(_));
+
+    function displayProdCart(products) {
+      for (let product of products) {
+        let summProd = coalesceES61(
+          product.summ,
+          product.desc.slice(0, 50) + "..."
+        );
+        console.log(`Summary, ${summProd}`);
+        // for in returns index no and for of returns object values.
+      }
+    }
+    displayProdCart(products);
+
+    // Square Every Digit
+    const num = 9134;
+    const digit = num.toString().split("");
+    console.log("digit", digit);
+
+    const digSquare = digit.map((n) => n * n);
+    console.log("digSquare", digSquare);
+
+    //1 Multiples of 3 or 5
+    const solution = (number) => {
+      let sum = 0;
+      for (let i = 0; i < number; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      //   console.log(sum, "sum");
+      return sum;
+    };
+    console.log("sum", solution(23)); //119
+    console.log("sum", solution(0)); // 0
+    console.log("sum", solution(-15)); // 0
+    console.log("sum", solution(10)); // 23
+    console.log("sum", solution(20)); // 78
+    console.log("sum", solution(200)); // 9168
+
+    //2 Even or Odd
+    function checkOddOrEven(n) {
+      if (n % 2 === 0) {
+        return "Number is even";
+      }
+      return "Number is odd";
+    }
+
+    console.log("The", checkOddOrEven(13));
+    console.log("The", checkOddOrEven(15));
+
+    //3 Clock
+    // The clock shows h hours (0 <= h <= 23), m minutes (0 <= m <= 59) and s seconds (0 <= s <= 59) after midnight.
+    // Your task is to write a function which returns the time since midnight in milliseconds.
+    // There are 1,000 milliseconds in a second.
+    // 60000 ms = 1 min
+    // 1 hr = 3600000
+    function past(h, m, s) {
+      let summ = h * 3600000 + m * 60000 + s * 1000;
+      console.log("summ", summ);
+    }
+    past(0, 0, 0); // 0
+    past(0, 1, 1); // 61000
+    past(1, 0, 0); // 3600000
+    past(1, 0, 1); // 3601000
+    past(1, 1, 1); // 3661000
+
+    // 4. Returning Strings
+    // Write a function that given the input string name, returns the greeting statement Hello, <name> how are you doing today?
+    // console.log(greet('Ryan')); // "Hello, Ryan how are you doing today?"
+    // console.log(greet('Sara')); // "Hello, Sara how are you doing today?"
+
+    function greet(name) {
+      let na = `Hello, ${name}  how are you doing today?`;
+      console.log("na", na);
+    }
+
+    greet("Ryan");
+    greet("Sara");
+
+    // 5. Century From Year
+    // The first century spans from the year 1 up to and including the year 100,
+    // The second - from the year 101 up to and including the year 200, etc. Given a year, return the century it is in.
+
+    function century(num) {
+      let ce = Math.ceil(num / 100);
+      console.log("ce", ce);
+    }
+    century(1705); // 18
+    century(1900); // 19
+    century(1601); // 17
+    century(2000); // 20
+    century(89); // 1
+
+    // 6. Keep Hydrated!
+    // Nathan loves cycling. Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of
+    // water per hour of cycling. Given the time in hours, you need to return the number of litres of water
+    // that Nathan will drink, rounded to the smallest value.
+
+    function litres(lit) {
+      let res = Math.trunc(lit * 0.5);
+      console.log("res", res);
+    }
+
+    litres(0); // 0
+    litres(2); // 1
+    litres(1.4); // 0
+    litres(12.3); // 6
+    litres(0.82); // 0
+    litres(11.8); // 5
+    litres(1787); // 893
+
+    // 7. Is n Divisible by x and y?
+    // Create a function that checks if a number n is divisible by two numbers x AND y.
+    // All inputs are positive, non-zero digits.
+
+    const isDivisible = (n, x, y) => {
+      let res = n % x === 0 && n % y === 0 ? true : false;
+      console.log("res", res);
+    };
+
+    isDivisible(3, 3, 4); // false
+    isDivisible(12, 3, 4); // true
+    isDivisible(8, 3, 4); // false
+    isDivisible(48, 3, 4); // true
+
+    // 8. Vowel Count
+    // Return the number (count) of vowels (a, e, i, o, u) in the given string.
+    // The input string will only consist of lower case letters and/or spaces.
+
+    const getCount = (str) => {
+      let re = str.match(/[aeiou]/gi) ? true : false;
+      let len = str.match(/[aeiou]/gi);
+      let nn = re === true ? len.length : 0;
+      console.log(re, "re");
+      console.log(nn, "nn");
+    };
+
+    getCount("my pyx"); // 0
+    getCount("pear tree"); // 4
+    getCount("abracadabra"); // 5
+    getCount("o a kak ushakov lil vo kashu kakao"); // 13
+
+    const getTotCount = (stri) => {
+      const vowels = ["a", "e", "i", "o", "u"];
+      let count = 0;
+      let n = stri.split("").map((char) => {
+        if (vowels.includes(char)) {
+          count++;
+        }
+        return count;
+      });
+      console.log("n", n);
+      console.log(vowels, "vowels");
+      console.log(n, "n");
+    };
+    getTotCount("my pyx");
+    getTotCount("pear tree"); // 4
+    getTotCount("abracadabra"); // 5
+    getTotCount("o a kak ushakov lil vo kashu kakao"); // 13
+
+    // 9. Disemvowel Trolls
+    // Trolls are attacking your comment section! A common way to deal with this situation is to remove all of
+    // the vowels from the trolls' comments, neutralizing the threat. Your task is to write a function that takes
+    // a string and returns a new string with all vowels (a, e, i, o, u) removed.
+
+    const disemvowel = (str) => {
+      debugger;
+      let vow = ["a", "e", "i", "o", "u"];
+      let count = 0;
+      let nv = str.split("").map((chars) => {
+        if (str.includes(vow)) {
+          count++;
+          console.log(str.includes(vow), "str");
+        }
+        return count;
+      });
+    };
+
+    console.log(disemvowel("This website is for losers LOL!")); // 'Ths wbst s fr lsrs LL!'
+  </script>
+</html>

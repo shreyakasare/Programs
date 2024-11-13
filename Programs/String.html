@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Write a JavaScript program to create a string
+    // from a given string. This is done by taking the last
+    // 3 characters and adding them at
+    // both the front and back. The string length must be 3 or more.
+    // If the string length is less than 3, return an empty string.
+
+    // The two parameters of substr() are start and length, while for
+    // substring(), they are start and end.
+
+    function createString(str) {
+      if (str.length >= 3) {
+        let lastThree = str.substr(-3);
+        return lastThree + str + lastThree;
+      } else {
+        return "";
+      }
+    }
+
+    console.log(createString("ShreyaKasare"));
+
+    // Write a JavaScript program to create another string
+    // by adding "Py" in front of a given string. If the given
+    // string begins with "Py" return the original string.
+
+    function searchString(str) {
+      if (str.toLocaleLowerCase().includes("py")) {
+        return str;
+      } else {
+        return "Py" + str;
+      }
+    }
+
+    console.log(searchString("hello")); // Output: Pyhello
+    console.log(searchString("Pyhello")); // Output: Pyhello
+    console.log(searchString("python")); // Output: python
+
+    // Write a JavaScript program to create another string from
+    // a given string with the first
+    // character of the given string added to the front and back.
+
+    function addCharToString(str) {
+      return str.charAt(0) + str + str.charAt(0);
+    }
+
+    console.log("addCharToString :", addCharToString("shreya")); //ssshreyas
+
+    // Write a JavaScript program to remove a character
+    // at the specified position in a given string and return
+    // the modified string.
+
+    function removeString(input, index) {
+      if (index <= 0 || index >= input.length) {
+        return input;
+      }
+      return input.slice(0, index) + input.slice(index + 1);
+    }
+
+    console.log(removeString("Shreya", 0)); // Output: "hllo"
+    console.log(removeString("hello", 1)); // Output: "hllo"
+    console.log(removeString("world", 3)); // Output: "word"
+    console.log(removeString("javascript", 4)); // Output: "javacript"
+
+    console.log(removeString("Remove", 3));
+
+    // Write a program to check whether a specified character
+    //  exists between the 2nd and 4th positions in a given string.
+
+    function checkCharAtPos(charStr, pos) {
+      if (pos === charStr.charAt(1) || pos === charStr.charAt(3)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    // console.log(checkCharAtPos("Shreya"));
+    console.log(checkCharAtPos("Python", "y")); //true
+    console.log(checkCharAtPos("JavaScript", "a")); //true
+    console.log(checkCharAtPos("Console", "o")); //true
+    console.log(checkCharAtPos("Console", "C")); //false
+    console.log(checkCharAtPos("Console", "e")); //false
+    console.log(checkCharAtPos("JavaScript", "S")); //false
+
+    // Write a JavaScript program to produce a new string that has the
+    // first 3 characters in lower case from a given string. If the string
+    // length is less than 3 convert all the characters to upper case.
+
+    function lowerCaseFirstThree(str) {
+      if (str.length < 3) {
+        return str.toUpperCase();
+      } else {
+        return str.substr(0, 3).toLocaleLowerCase() + str.substr(3);
+      }
+    }
+
+    console.log(lowerCaseFirstThree("Python")); //python
+    console.log(lowerCaseFirstThree("Py")); //PY
+    console.log(lowerCaseFirstThree("JAVAScript")); //javAScript
+
+    // Write a JavaScript program to evaluate a student's total marks
+    // across various examinations and determine their grade.
+    // The grading criteria are as follows:
+
+    // If the total marks fall within the range of 89 to 100 (inclusive),
+    // the student receives an A+ grade.
+
+    // If the examination is labeled as "Final-exam," the student will
+    // receive an A+ grade only if their total marks are 90 or greater.
+    // Assume that final examination means we pass 'true' as second
+    // parameter otherwise blank.
+
+    // If the student achieves an A+ grade, the program should return 'true';
+    // otherwise, it should return 'false'.
+
+    function evaluateGrade(totalMarks, isFinalExam) {
+      if (totalMarks >= 89 || totalMarks <= 100) {
+        if (isFinalExam && totalMarks >= 90) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+
+    console.log(evaluateGrade("78", " ")); //false
+    console.log(evaluateGrade("89", "true ")); //false
+    console.log(evaluateGrade("99", "true ")); //true
+
+    // Write a JavaScript program to replace every
+    // character in a given string with the character following it in the alphabet.
+
+    function replaceAndCapitalizeVowels(str) {
+      let newStr = str.split("");
+      // let charCode = String.fromCharCode(newStr);
+      let result = newStr.map((char) => {
+        let newChar = String.fromCharCode(char.charCodeAt(0) + 1);
+        console.log(char);
+        console.log(newChar);
+        return newChar;
+      });
+      console.log("result", result.join(""));
+      return result.join(""); //  ifmmp!xpsme"!{fcsb
+    }
+
+    // function replaceAndCapitalizeVowels(str) {
+    //   const vowels = ["a", "e", "i", "o", "u"];
+
+    //   let spstr = str.split("");
+    //   let result = spstr.map((char) => {
+
+    //     // Check if the character is a letter
+    //     if (/[a-zA-Z]/.test(char)) {
+    //       // Convert the string to an array of characters and map over each one
+
+    //       // Get the next character in the alphabet
+    //       let nextChar = String.fromCharCode(char.charCodeAt(0) + 1);
+
+    //       // Wrap around if the character is 'z' or 'Z'
+    //       if (char === "z") nextChar = "a";
+    //       if (char === "Z") nextChar = "A";
+
+    //       // Convert to uppercase if it's a vowel
+    //       if (vowels.includes(nextChar.toLowerCase())) {
+    //         nextChar = nextChar.toUpperCase();
+    //       }
+
+    //       return nextChar;
+    //     } else {
+    //       // Return non-letter characters unchanged
+    //       return char;
+    //     }
+    //   });
+
+    //   // Join the array back into a string and return
+    //   return result.join("");
+    // }
+
+    // Test the function
+    const input = "hello world! zebra";
+    const output = replaceAndCapitalizeVowels(input);
+    console.log(output); // Output: "Ifmmp xpsmE! Afcsb"
+
+    // Write a JavaScript program to capitalize the first letter
+    // of each word in a given string.
+
+    // function capitalizeFirstLetter(str) {
+    //   let newStr = str.split("");
+    //   let capitalize = true;
+
+    //   let re = newStr.map((char, index) => {
+    //     let upp = char.toUpperCase();
+    //     if (index === 0) {
+    //       capitalize = false;
+    //       return upp;
+    //     } else if (char === " ") {
+    //       capitalize = true;
+    //       return char;
+    //     } else if (capitalize) {
+    //       capitalize = false;
+    //       return upp;
+    //     }
+    //     return char;
+    //   });
+    //   return re.join("");
+    //   console.log("re", re);
+    // }
+    // console.log(
+    //   capitalizeFirstLetter(
+    //     "write a javaScript program to capitalize the first letter of each word of a given string."
+    //   )
+    // );
+
+    function capitalizeFirstLetter(str) {
+      let newStr = str.split("");
+      let capitalize = true;
+
+      let re = newStr.map((char, index) => {
+        if (capitalize && char.match(/[a-zA-Z]/)) {
+          capitalize = false;
+          return char.toUpperCase();
+        }
+        if (char === " ") {
+          capitalize = true;
+        }
+        return char;
+      });
+      return re.join("");
+    }
+
+    console.log(
+      "dd",
+      capitalizeFirstLetter(
+        "write a javaScript program to capitalize the first letter of each word of a given string."
+      )
+    );
+
+    // Write a JavaScript program to convert letters of a given string alphabetically.
+
+    function alphabet_Soup(letterString) {
+      let dd = letterString.split("");
+      let newChar = dd.sort().join("");
+    }
+    console.log(alphabet_Soup("Python")); // Phnoty
+    console.log(alphabet_Soup("Exercises")); // Eceeirssx
+
+    // Write a JavaScript program to check whether the characters a and b are
+    // separated by exactly 3 places anywhere (at least once) in a given string.
+
+    function ab_Check(char) {
+      return /a...b/.test(char) || /b...a/.test(char);
+    }
+    console.log(ab_Check("Chainsbreak")); //true
+    console.log(ab_Check("pane borrowed")); //true
+    console.log(ab_Check("abCheck")); //false
+
+    // Write a JavaScript program to count the number of vowels in a given string.
+
+    function vowel_Count(str) {
+      const vowels = str.match(/[aeiou]/gi); // Match all vowels (case-insensitive)
+      return vowels ? vowels.length : 0; // Return the length of the matched vowels or 0 if no vowels found
+    }
+
+    console.log(vowel_Count("Python")); // Output: 1
+    console.log(vowel_Count("w3resource.com"));
+
+    // Write a JavaScript program to check whether a given string contains
+    // an equal number of p's and t's.
+    function checkP_T(str) {
+      let dd = str.split("");
+      let countp = 0,
+        countt = 0;
+      let newStr = dd.map((nstr) => {
+        if (nstr.includes("p")) return countp++;
+        else if (nstr.includes("t")) return countt++;
+        console.log(countp, "findlettersP");
+        console.log(countt, "findlettersT");
+      });
+    }
+
+    console.log("checkP_T", checkP_T("paatpss"));
+    console.log(checkP_T("paatps"));
+
+    // Write a JavaScript program to create an updated string of 4 copies of
+    // the last 3 characters of a given string. The string length must be 3 and above.
+
+    function lastThreeCharacters(str) {
+      if (str.length < 3) {
+        return "String length should be 3 or above.";
+      } else {
+        let lastThreeChars = str.substr(-3);
+        let updatedString = lastThreeChars.repeat(4);
+        return updatedString;
+      }
+    }
+
+    console.log(lastThreeCharacters("Python 3.0")); // 3.03.03.03.0
+    console.log(lastThreeCharacters("JS")); // false
+    console.log(lastThreeCharacters("JavaScript")); // iptiptiptipt
+
+    // Write a JavaScript program to extract the first half of a even string.
+
+    function extractFirstHalf(str) {
+      if (str.length % 2 === 0) {
+        let mid = str.length / 2;
+        let even = str.substr(0, mid);
+        console.log("Even", even);
+      } else return str;
+    }
+
+    console.log(extractFirstHalf("Python")); //  "Pyt"
+    console.log(extractFirstHalf("JavaScript")); //  "JavaS"
+    console.log(extractFirstHalf("PHP"));
+
+    // Write a JavaScript program to create a new string without
+    // the first and last characters of a given string.
+
+    function without_first_end(str) {
+      if (str.length > 0) {
+        return str.slice(1, -1);
+      } else return str;
+    }
+    console.log(without_first_end("JavaScript"));
+    console.log(without_first_end("JS"));
+    console.log(without_first_end("PHP"));
+
+    function removeFirstAndLast(str) {
+      if (str.length > 2) {
+        let newStr = str.slice(1, -1);
+        console.log("New String", newStr);
+      } else return str;
+    }
+
+    // Write a JavaScript program to concatenate two strings except for their first character.
+
+    function concatenate(str1, str2) {
+      let len1 = str1.length;
+      let len2 = str2.length;
+      let newStr1 = str1.substr(1, len1);
+      let newStr2 = str2.substr(1, len2);
+
+      let res = newStr1 + newStr2;
+      console.log(res, "res");
+    }
+
+    console.log(concatenate("PHP", "JS")); //HPS
+    console.log(concatenate("A", "B"));
+    console.log(concatenate("AA", "BB")); //AB
+
+    // Write a JavaScript program to move the last three characters to the start of a given string.
+    // The string length must be greater than or equal to three.
+
+    function right_three(str) {
+      if (str.length >= 3) {
+        let lastThree = str.length - 3;
+        let newStr = str.substr(lastThree, str.length);
+        let newFirst = str.substr(0, lastThree);
+
+        let res = newStr + newFirst;
+        console.log(res, "res");
+      } else str;
+    }
+    console.log(right_three("Python")); //honPyt
+
+    console.log(right_three("JavaScript")); //iptJavaScr
+    console.log(right_three("Hi")); //Hi
+
+    // Write a JavaScript program to create a string using the middle three
+    // characters of a given string of odd length.
+    // The string length must be greater than or equal to three.
+
+    function middle_three(str) {
+      if (str.length >= 3) {
+        let mid = Math.floor(str.length / 2);
+        let newS = str.substr(mid - 1, 3);
+        console.log(newS, "newS");
+      } else return str;
+    }
+    console.log(middle_three("abcdefg")); // cde
+    console.log(middle_three("HTML5")); //TML
+    console.log(middle_three("Python")); //Python
+    console.log(middle_three("PHP")); //PHP
+    console.log(middle_three("Exercises")); //rci
+
+    // Write a JavaScript program to concatenate two strings and return the result. If the length
+    // of the strings does not match, then remove the characters from the longer string.
+
+    function str_con_cat(str1, str2) {
+      let len1 = str1.length,
+        len2 = str2.length;
+      if (len1 !== len2) {
+        if (len1 > len2) {
+          let newlen1 = len2;
+          return str1.substr(newlen1) + str2.len2;
+        } else {
+          let newlen2 = len1;
+          return str1.len2 + str2.newlen2;
+        }
+      }
+      let conc = str1 + str2;
+    }
+
+    console.log(str_con_cat("Python", "JS")); //onJS
+    console.log(str_con_cat("ab", "cdef")); //abef
+
+    // Write a JavaScript program to test whether a string ends with "Script".
+    // The string length must be greater than or equal to 6.
+
+    function end_script(str) {
+      if (str.length >= 6) {
+        if (str.substr(str.length - 6, str.length) === "Script") return true;
+        else return false;
+      }
+    }
+
+    console.log(end_script("JavaScript"));
+    console.log(end_script("Java Script"));
+    console.log(end_script("Java Scripts"));
+
+    // Write a JavaScript program to display the city name
+    // if the string begins with "Los" or "New" otherwise return blank.
+
+    function city_name(str) {
+      if (str.startsWith("Los") || str.startsWith("New")) {
+        return str;
+      } else return "";
+    }
+
+    console.log(city_name("New York"));
+    console.log(city_name("Los Angeles"));
+    console.log(city_name("London"));
+
+    // Write a JavaScript program to create a new string from a given string.
+    // This program removes the first and last characters of the string if
+    // the first or last character is 'P'.
+    // Return the original string if the condition is not satisfied.
+
+    function new_string(str) {
+      if (str[0] === "P" || str[str.length - 1] === "P") {
+        return str.slice(1, -1);
+      } else return str;
+    }
+    console.log(new_string("PythonP"));
+    console.log(new_string("Python"));
+    console.log(new_string("JavaScript"));
+
+    // Write a JavaScript program to create a new string using the first
+    // and last n characters from a given string. The string length must be larger than or equal to n.
+
+    function two_string(str, len) {
+      if (str.length >= len) {
+        return str.slice(0, len) + str.slice(-len);
+      } else return str;
+    }
+
+    console.log(two_string("JavaScript", 2)); // Japt
+    console.log(two_string("JavaScript", 3)); // Javipt
+
+    // 83. Write a JavaScript program to find the longest string from a given array of strings.
+    function longest_string(arr) {
+      let longest = "";
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > longest.length) {
+          longest = arr[i];
+        }
+      }
+      return longest;
+    }
+
+    console.log(longest_string(["a", "aa", "aaa", "aaaaa", "aaaa", "aaaaad"]));
+
+    // 84. Write a JavaScript program to replace each character in a given
+    // string with the next in the English alphabet.
+    // Note: 'a' will be replace by 'b' or 'z' would be replaced by 'a'.
+
+    function alphabet_char_Shift(str) {
+      let newStr = str.split("");
+      let res = newStr.map((char) => {
+        if (char === "a") return (nextchar = "z");
+        if (char === "z") return (nextchar = "a");
+        let nextChar = String.fromCharCode(char.charCodeAt() + 1);
+        return nextChar;
+        console.log(char);
+        console.log(nextChar);
+      });
+      console.log(res.join(""), "join");
+
+      return res.join("");
+    }
+    console.log(alphabet_char_Shift("abcdxyz")); // o/p zcdeyza
+
+    // ========================================================================
+    // Saurabh's Code Array of numbers
+    const numbers = [1, 2, 3, 4, 5];
+
+    const squares = numbers.reduce((acc, x, index, arr) => {
+      acc.push(x ** 2);
+      return acc;
+    }, []);
+    console.log(squares); // Output: [1, 4, 9, 16, 25]
+
+    // =====================================================
+    let arr = [5, 6, 2];
+    let newArr = arr.reduce(
+      (accumulator, element, index, arr) => {
+        return (accumulator *= element);
+      } // Accumulator : Previouse Value
+    );
+  </script>
+</html>

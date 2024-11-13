@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="num" placeholder="Enter a number" />
+      <button onclick="addData()">Add</button>
+      <button onclick="displayData()">Display</button>
+
+      <div id="displayArea"></div>
+    </div>
+  </body>
+  <script>
+    // 13. Write a JavaScript program to add items to a blank array and display them.
+
+    let array = [];
+    function addData() {
+      debugger;
+      let number = document.getElementById("num").value;
+
+      if (number === "") {
+        alert("Please enter a number");
+        return;
+      }
+
+      array.push(number);
+      let newIndex = array.length - 1;
+      alert("Element:" + " " + number + " " + "Added at index" + newIndex);
+      document.getElementById("num").value = "";
+    }
+
+    function displayData() {
+      debugger;
+
+      let displayArea = document.getElementById("displayArea");
+      if (array.length === 0) {
+        displayArea.innerHTML = "No data to display";
+        return;
+      }
+
+      displayArea.innerHTML = "Array elements: " + array.join(", ");
+    }
+
+    //  Element:  Added at index 4
+    // 1. Write a JavaScript function to check whether an `input` is an array or not.
+
+    function is_array(input) {
+      return Array.isArray(input);
+    }
+
+    console.log(is_array("w3resource")); // false
+    console.log(is_array([1, 2, 4, 0])); // true
+
+    // 2. Write a JavaScript function to clone an array.
+
+    function array_clone(input) {
+      return JSON.parse(JSON.stringify(input));
+    }
+
+    console.log(array_clone([1, 2, 4, 0])); // [1, 2, 4, 0]
+    console.log(array_clone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
+
+    // 3. Write a JavaScript function to get the first element of an array.
+    // Passing the parameter 'n' will return the first 'n' elements of the array.
+
+    function first(arr, n = 1) {
+      if (n <= 0 || !Array.isArray(arr)) {
+        return [];
+      }
+      return arr.slice(0, n);
+    }
+
+    console.log(first([7, 9, 0, -2])); // 7
+    console.log(first([], 3)); // []
+    console.log(first([7, 9, 0, -2], 3)); // [7, 9, 0]
+    console.log(first([7, 9, 0, -2], 6)); // [7, 9, 0, -2]
+    console.log(first([7, 9, 0, -2], -3)); // []
+
+    // 4. Write a JavaScript function to get the last element of an array.
+    // Passing the parameter 'n' will return the last 'n' elements of the array.
+
+    function last(arr, n) {
+      if (n === null || n === undefined) {
+        return [arr[arr.length - 1]];
+      }
+      return arr.slice(-n);
+    }
+
+    console.log(last([7, 9, 0, -2])); // -2
+    console.log(last([7, 9, 0, -2], 3)); // [9, 0, -2]
+    console.log(last([7, 9, 0, -2], 6)); // [7, 9, 0, -2]
+
+    // ================================= String =======================================
+
+    // 5. Write a simple JavaScript program to join all elements of the following
+    // array into a string.
+
+    function myColor(arr) {
+      myColorr = ["Red", "Green", "White", "Black"];
+      return myColorr.join(arr);
+    }
+    console.log(myColor()); // Red,Green,White,Black
+    console.log(myColor()); //Red,Green,White,Black
+    console.log(myColor("+")); //Red+Green+White+Black
+
+    // 6. Write a JavaScript program that accepts a number as input and inserts dashes (-)
+    // between each even number. For example if you accept 025468 the output should be 0-254-6-8.
+
+    function insertDashes(num) {
+      let result = "";
+      for (let i = 0; i < num.length; i++) {
+        if (parseInt(num[i]) % 2 === 0) {
+          result += "-" + num[i];
+        } else {
+          result += num[i];
+        }
+      }
+      return result.substring(1);
+    }
+
+    console.log(insertDashes("025468")); // 0-254-6-8
+
+    // 7. Write a JavaScript program to sort the items of an array.
+
+    function sortArray(arr) {
+      return arr.sort((a, b) => a - b);
+    }
+
+    console.log(sortArray([-3, 8, 7, 6, 5, -4, 3, 2, 1])); // -4,-3,1,2,3,5,6,7,8
+
+    // 8. Write a JavaScript program to find the most frequent item in an array.
+    // Sample array : var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    // Sample Output : a ( 5 times )
+
+    function findMostFrequent(arr) {
+      let counts = {};
+      let maxCount = 0;
+      let mostFrequentItem;
+      for (let i = 0; i < arr.length; i++) {
+        let item = arr[i];
+
+        //         [
+        //    0 : 3,
+        //    1 : "a",
+        //    2 : "a",
+        //    3 : "a",
+        //    4 : 2,
+        //    5 : 3,
+        //    6 : "a",
+        //    7 : 3,
+        //    8 : "a",
+        //    9 : 2,
+        //    10 : 4,
+        //    11 : 9,
+        //    12 : 3
+        // ]
+
+        // let item = arr[i];
+        // arr[i]
+        // arr = 3, i = 0;
+        // item = 3
+
+        // counts[item] = (counts[item] || 0) + 1;
+        // (counts[item] || 0)
+        // (counts[item] = 0
+        // let counts = {};
+        // counts = { 3: 1 };
+        // 1
+
+        // if (counts[item] > maxCount) {
+        // let maxCount = 0;
+        // 1 > 0
+
+        // maxCount = counts[item];
+        // 1 = 1
+
+        // mostFrequentItem = item;
+        // 3                = 3
+        counts[item] = (counts[item] || 0) + 1;
+        if (counts[item] > maxCount) {
+          maxCount = counts[item];
+          mostFrequentItem = item;
+        }
+      }
+      return [mostFrequentItem, maxCount];
+    }
+
+    console.log(
+      findMostFrequent([3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3])
+    );
+
+    // Write a JavaScript program that accepts a string as input and swaps the case of each character.
+
+    function swapString(inp) {
+      let pp = inp.split("");
+      for (let i = 0; i < pp.length; i++) {
+        if (pp[i] === pp[i].toUpperCase()) {
+          pp[i] = pp[i].toLocaleLowerCase();
+        } else if (pp[i] === pp[i].toLocaleLowerCase()) {
+          pp[i] = pp[i].toUpperCase();
+        }
+      }
+      return pp.join("");
+    }
+
+    console.log(swapString("The Quick Brown Fox")); //tHE qUICK bROWN fOX
+
+    // 10. Write a JavaScript program that prints the elements of the following array.
+    // Note : Use nested for loops.
+    // Sample array : var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+    // Sample Output :
+    // "row 0"
+    // " 1"
+    // " 2"
+    // " 1"
+    // " 24"
+    // "row 1"
+    // ------
+    // ------
+    function arrRowCount(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        console.log("Row", i);
+        console.log(arr[i]);
+      }
+    }
+
+    console.log(
+      arrRowCount([
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7],
+      ])
+    );
+
+    // 11. Write a JavaScript program to find the sum of squares of a numerical vector.
+
+    function sum_sq(arr) {
+      let sum = 0;
+      return arr.reduce((previousValue, currentValue) => {
+        let fff = currentValue * currentValue;
+        return (sum += fff);
+      });
+    }
+    console.log(sum_sq([0, 1, 2, 3, 4])); // 30
+
+    // 12. Write a JavaScript program to compute the sum and product of an array of integers.
+
+    function sumArray(sumArr) {
+      let sum = 0,
+        product = 1;
+      sumArr.forEach((val) => {
+        product *= val;
+        sum += val;
+      });
+      return { sum, product };
+    }
+    console.log("sumArray", sumArray([1, 2, 3, 4, 5, 6]));
+  </script>
+</html>

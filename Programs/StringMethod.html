@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Write a JavaScript program to check whether a string starts
+    // with 'Java' if it does not otherwise.
+
+    function checkString(str) {
+      let aa = str.toLocaleLowerCase();
+      return aa.startsWith("java") ? true : false;
+    }
+
+    console.log(checkString("Javascript"));
+    console.log(checkString("script"));
+
+    // Write a JavaScript program to reverse a given string.
+
+    function reverseString(str) {
+      debugger;
+      // let reversed = "";
+      // for (let i = str.length - 1; i >= 0; i--) {
+      //   reversed += str[i];
+      // }
+      // return reversed;
+
+      // Second method
+      return str.split("").reverse().join("");
+    }
+
+    console.log(reverseString("w3resource")); //ecruoser3w  ecruoser3w
+    console.log(reverseString("www")); //www www
+    console.log(reverseString("JavaScript")); //tpircSavaJ tpircSavaJ
+  </script>
+</html>

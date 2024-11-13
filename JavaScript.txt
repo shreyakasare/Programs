@@ -1,0 +1,1321 @@
+https://github.com/sudheerj/javascript-interview-questions?tab=readme-ov-file#what-is-json-and-its-common-operations
+
+1995 Brendan Eich 1st version in 10 days Mocha
+
+>>>>>Object literal syntax:
+
+The object literal syntax (or object initializer), is a comma-separated set of name-value pairs 
+wrapped in curly braces.
+
+var object = {
+     name: "Sudheer",
+     age: 34
+};
+
+Object literal property values can be of any data type, including array, function, and nested object.
+
+
+---- Function constructor:
+
+Create any function and apply the new operator to create object instances,
+
+function Person(name) {
+  this.name = name;
+  this.age = 21;
+}
+var object = new Person("Sudheer");
+
+Object.keys
+============
+
+The Object.keys() method returns an array with the keys of an object.
+
+The Object.keys() method does not change the original object.
+
+Object 
+=======
+
+user = {
+  name: "John",
+  surname: "Doe"
+}
+
+name, surname (attributes / properties)
+
+>>> Closure
+
+Inner function can have access to the outer function variables as well as 
+all the global variables.
+
+The closure has three scope chains.
+
+1) Own scope where variables defined between its curly brackets
+2) Outer function's variables
+3) Global variables
+
+
+function Welcome(name) {
+  var greetingInfo = function (message) {
+    console.log(message + " " + name);
+  };
+  return greetingInfo;
+}
+var myFunction = Welcome("John");
+myFunction("Welcome "); //Output: Welcome John
+myFunction("Hello Mr."); //output: Hello Mr. John
+
+
+Array
+======
+
+The Array object is used to store multiple values in a single variable.
+
+
+Localstorage
+============
+
+The localStorage object allows you to save key/value pairs in the browser.
+
+The localStorage object stores data with no expiration date.
+
+The data is not deleted when the browser is closed, and are available for future sessions.
+
+Destructuring
+==============
+
+get some data out of an object or an array.
+
+Synchronous
+============
+
+> Most code is Synchronous.
+> Synchronous code is executed line by line.
+> Each line of code waits for previous line to finish.
+example
+alert method will block the code execution until we click OK button, only then the code will
+execute.
+
+Asynchronous
+=============
+
+> Asynchronous code is executed after a task that runs in the background finishes.
+> Asynchronous code is non-blocking.
+> Execution doesn't wait for an Asynchronous task to finish its work.
+example 
+setTimeout- the timer will essentially run in the background without preventing the main
+code from executing.
+
+
+Rest
+====
+
+Short Circuiting and Logical Operators
+=======================================
+
+console.log(true && "Some String");   // Some String
+console.log(false && "Some String");  // false
+
+console.log(true || "Some String");  // true
+console.log(false || "Some String");  // Some String
+
+
+Nullish coalescing
+===================
+
+The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand 
+when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+
+Mutate
+======
+
+Changable
+
+reduce
+======
+Syntax :
+
+Array.reduce((accumulator, item, index, array) => {
+  // TODO: Define the process for each iteration here
+}, initialAccumulatorValue)
+
+
+let arr = [1,2,3,4,5]
+let arr1 = arr.reduce((a, b) =>{
+  return a + b;
+})
+
+1 + 2 = 3; 3 + 3 = 6;  6 + 4 = 10; 10 + 5 = 15
+o/p 15 
+
+a is the current value which adds 1 and 2 and so on.
+reduce adds a and b values.
+
+
+Optional chaining (?.)
+========================
+
+If the object accessed or function called using this operator is undefined or null, the expression 
+short circuits and evaluates to undefined instead of throwing an error.
+
+find
+====
+
+The find() method returns the value of the first element that passes a test.
+The find() method executes a function for each array element.
+The find() method returns undefined if no elements are found.
+The find() method does not execute the function for empty elements.
+The find() method does not change the original array.
+
+
+filter()
+========
+
+The filter() method creates a new array filled with elements that pass a test provided by a function.
+The filter() method does not execute the function for empty elements.
+The filter() method does not change the original array.
+
+includes
+=========
+
+The includes() method returns true if an array contains a specified value.
+The includes() method returns false if the value is not found.
+The includes() method is case sensitive.
+
+Memoized function
+==================
+
+A memoized function is a function that will never be called twice with the same inputs. 
+Instead it will return a cached value.
+
+Immutable
+=========
+
+unable to be changed
+
+Primitive data types
+====================
+
+1) Number : Floating point numbers. Used for decimals and integers. let age = 23;
+
+2) String : Sequence of characters. Used for text. let firstName = 'Jonas';
+
+3) Boolean : Logical type that can only be true or false. Used for taking decisions. 
+let fullAge = true;
+
+4) Undefined: Value taken by a variable that is not yet defined ('empty value') let children;
+
+5) Null: Also means 'empty value';
+
+6) Symbol (ES2015): Value that is unique and cannot be changed [Not useful for now].
+
+7) BigInt (ES2020): Larger integers than the Number type can hold.
+
+*** JavaScript has dynamic typing: We do not have to manually define the data type of the value 
+stored in a variable. Instead, data types are determined automatically.
+
+JavaScript is a high-level, prototype based object oriented, multi-pradigm,
+interpreted or just-in-time compiled, dynamic, single-threaded, garbage-collected,
+programming language with first class functions and a non-blocking, event loop concurrency
+model.
+
+>>> Thread is typically the smallest set or sequence of instructions that a computer 
+can manage and execute; 
+it is the basic unit of processor (CPU) utilization.
+Each thread belongs to exactly one process.
+Threads run in parallel improving the application performance. 
+A thread is also known as a lightweight process. 
+
+JS Engine
+==========
+
+Program that executes javascript code.
+Example : V8 engine
+
+JS Engine
+       _____________                   _____________
+      |             |                 |             |
+      |             |                 |             |
+      |             |                 |             |
+      |             |                 |             |
+      |             |                 |             |
+      |             |                 |             |
+      |             |                 |             |
+      |             |                 |             |
+      |_____________|                 |_____________|
+      
+         Call Stack                         Heap
+
+ Call Stack : where code is executed using execution context.
+ Heap: where objects are stored.
+      
+How code is compiled?
+
+>> Compilation : Entire code is converted into machine code at once,
+and written to a binary file that can be executed by a computer.
+
+                 Step 1                          Step 2 
+Source code   ----------->    Portable file:  ---------->  Program
+              Compilation      machine code    Execution   running
+
+First the machine code is build and then it is executed by a processor.
+And the execution can happen way after the Compilation.
+
+
+>> Interpretation : runs through the source code and executes it line by line.
+
+
+                        Step 1                           
+Source code   -------------------------->  Program
+                Execution line by line     running
+                  |
+                  |
+                  \/
+            Code still needs to be converted into machine code
+
+>> Just-in-time (JIT) compilation : Entire code is converted into machine code at once,
+then executed immediately.
+
+                 Step 1                   Step 2 
+Source code   ----------->    Machine   ---------->  Program
+              Compilation       code    Execution   running
+
+                                  |         |
+                                  |         |
+                                  \/        --> Happens immediately
+                  Not a Portable file
+
+            Abstract syntax tree AST 
+
+JS Engine
+=========
+
+>> Code enters the engine > the first step is to parse (read) the code.
+The code is parsed into the data structure called Abstract syntax tree AST.
+
+
+
+
+
+
+javascriptIsFun = 'YES!';
+console.log(typeof javascriptIsFun);    //String
+
+let year;
+console.log(year);                      //undefined
+console.log(typeof year);               //undefined
+
+year = 1991;
+console.log(typeof year);               //number
+
+console.log(typeof null);               //object
+
+console.log(typeof NaN);               //number
+
+ES6
+===
+
+let, var and const
+==================
+
+> var functional scope
+> The scope is global when a var variable is declared outside a function. 
+> any variable that is declared with var outside a function block is available 
+for use in the whole window.
+> var is function scoped when it is declared within a function. This means that 
+it is available and can be accessed only within that function.
+
+  var tester = "hey hi";
+    
+    function newFunction() {
+        var hello = "hello";
+    }
+    console.log(hello); // error: hello is not defined
+
+> var variables can be re-declared and updated
+This means that we can do this within the same scope and won't get an error.
+    var greeter = "hey hi";
+    var greeter = "say Hello instead";
+
+    console.log("D", greeter)  o/p D say Hello instead
+
+    var greeter = "hey hi";
+    greeter = "say Hello instead";
+
+  console.log("D", greeter) 
+
+
+> Hoisting of var
+
+JavaScript only hoists declarations, not initializations.
+
+Hoisting is a JavaScript mechanism where variables and function 
+declarations are moved to the top of their scope before code execution. 
+JavaScript only hoists declarations, not initialisation.
+This means that if we do this:
+
+ console.log (greeter);
+    var greeter = "say hello"
+
+it is interpreted as this:
+
+     var greeter;
+    console.log(greeter); // greeter is undefined
+    greeter = "say hello"
+
+Problem with var
+There's a weakness that comes with  var. I'll use the example below to explain:
+
+    var greeter = "hey hi";
+    var times = 4;
+
+    if (times > 3) {
+        var greeter = "say Hello instead"; 
+    }
+    
+    console.log(greeter) // "say Hello instead"
+    
+So, since times > 3 returns true, greeter is redefined  to "say Hello instead". 
+While this is not a problem if you knowingly want greeter to be redefined, 
+it becomes a problem when you do not realize that a variable greeter 
+has already been defined before.
+
+If you have used greeter in other parts of your code, you might be surprised 
+at the output you might get. This will likely cause a lot of bugs in your code. 
+This is why let and const are necessary.
+
+let and const are block scope
+
+
+let age = 30;
+age = 31;   //reassigning a value to a variable or mutating the age variable.
+
+const birthYear = 1991;
+birthYear = 1990;   //Uncaught TypeError: Assignment to constant variable. (Immutable variable)
+
+var job = 'programmer';
+job = 'teacher';        //values can be mutated
+
+lastName = 'Schmedtmann';
+console.log(lastName);    //Schmedtmann
+
+////////////////////////////////////
+// Basic Operators
+// Math operators
+
+const firstName = 'Jonas';
+const lastName = 'Schmedtmann';
+console.log(firstName + ' ' + lastName); //Jonas Schmedtmann
+
+
+// Assignment operators
+let x = 10 + 5; // 15
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x++; // x = x + 1
+x--;
+x--;
+console.log(x);
+
+// Comparison operators
+console.log(ageJonas > ageSarah); // >, <, >=, <= o/p true
+
+
+Type conversion is what we manually convert from one type to another.
+
+Type coercion is when js automatically converts types behind the scenes for us.
+
+Type coercion is implicit whereas type conversion can be either implicit or explicit.
+
+
+
+// type conversion
+
+
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas'));
+console.log(typeof NaN);        //number
+
+console.log(String(23), 23);    23
+
+// type coercion
+console.log('I am ' + 23 + ' years old');
+console.log('23' - '10' - 3);       //10
+console.log('23' / '2');            //11.5
+
+let n = '1' + 1; // '11'
+n = n - 1;
+console.log(n);
+
+// Truthy and Falsy Values
+
+// 5 falsy values: 0, '', undefined, null, NaN
+console.log(Boolean(0));                  //false
+console.log(Boolean(undefined));          //false
+console.log(Boolean('Jonas'));            //true
+console.log(Boolean({}));                 //true
+console.log(Boolean(''));                 //false 
+
+
+const money = 0;    //type coercion
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log('You should get a job!');
+}
+o/p false
+
+
+const money = 100;       //type coercion
+if (money) {
+  console.log("Don't spend it all");
+} else {
+  console.log('You should get a job!');
+}
+o/p true
+
+
+let height = 0; || 123
+if (height) {
+  console.log('YAY! Height is defined');
+} else {
+  console.log('Height is UNDEFINED');
+}
+o/p   Height is UNDEFINED
+
+o/p   YAY! Height is defined
+
+
+(==) loose equality : The equality operator in javascript is used to compare if two values are equal.
+
+(===) strict : operator compares the values as well as the data types of the operands.
+
+
+const favourite = Number(prompt("What's your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite);    //String
+
+
+////////////////////////////////////
+// Truthy and Falsy Values
+
+// 5 falsy values: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));              //false
+console.log(Boolean(undefined));      //false
+console.log(Boolean('Jonas'));        //true
+console.log(Boolean({}));             //true
+console.log(Boolean(''));             //false
+
+
+const favourite = Number(prompt("What's your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite);    //string  
+
+
+console.log(typeof null);        //object
+console.log(typeof undefined);   //undefined
+console.log(null === undefined); //false
+console.log(null == undefined);  //true
+
+////////////////////////////////////
+// Logical Operators
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);    //true
+console.log(hasDriversLicense || hasGoodVision);    //true
+console.log(!hasDriversLicense);                    //false
+
+
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log('Sarah is able to drive!');        o/p t t
+// } else {
+//   console.log('Someone else should drive...');   o/p t f
+// }
+
+////////////////////////////////////
+// The switch Statement
+const day = 'friday';
+
+switch (day) {
+  case 'monday': // day === 'monday'
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+    break;
+  case 'tuesday':
+    console.log('Prepare theory videos');
+    break;
+  case 'wednesday':
+  case 'thursday':
+    console.log('Write code examples');
+    break;
+  case 'friday':
+    console.log('Record videos');
+    break;
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend :D');
+    break;
+  default:
+    console.log('Not a valid day!');
+}
+
+*** if no breaks are put the next cases will be executed.
+
+if (day === 'monday') {
+  console.log('Plan course structure');
+  console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+  console.log('Prepare theory videos');
+} else if (day === 'wednesday' || day === 'thursday') {
+  console.log('Write code examples');
+} else if (day === 'friday') {
+  console.log('Record videos');
+} else if (day === 'saturday' || day === 'sunday') {
+  console.log('Enjoy the weekend :D');
+} else {
+  console.log('Not a valid day!');
+}
+
+
+
+////////////////////////////////////
+// Statements and Expressions
+3 + 4
+1991
+true && false && !false
+
+if (23 > 10) {
+  const str = '23 is bigger';
+}
+
+const me = 'Jonas';
+console.log(`I'm ${2037 - 1991} years old ${me}`);
+
+
+////////////////////////////////////
+// The Conditional (Ternary) Operator
+const age = 23;
+// age >= 18 ? console.log('I like to drink wine 🍷') : console.log('I like to drink water 💧');
+
+const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+  drink2 = 'wine 🍷';
+} else {
+  drink2 = 'water 💧';
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💧'}`);
+*/
+
+
+>>> String and template literal
+
+console.log('String with \n\
+multiple \n\
+lines')
+o/p 
+String with
+multiple
+lines
+
+
+use strict
+===========
+
+It helps you to write cleaner code, like preventing you from using undeclared variables.
+
+
+Function
+=========
+
+A JavaScript function is a block of code designed to perform a particular task.
+
+A JavaScript function is executed when "something" invokes it (calls it).
+
+function logger()
+{
+  console.log("Shreya)
+}
+logger();     //calling, invoking, running a function
+
+
+Pass by value
+========================
+
+When passing data by value, a copy of the value is created and 
+passed to the function. This means that any changes made to the value 
+within the function will not affect the original value.
+
+Pass by reference
+=================
+
+When passing data by reference, a reference to the original value is 
+passed to the function. This means that any changes made to the value 
+within the function will also affect the original value.
+
+>>> Higher Order Functions
+==========================
+
+Functions that operate on other functions, either by taking them as 
+arguments or by returning them, are called higher-order functions.
+
+Memoization
+============
+
+Memoization is a functional programming technique which attempts to 
+increase a function’s performance by caching its previously computed 
+results. Each time a memoized function is called, its parameters are 
+used to index the cache. If the data is present, then it can be 
+returned, without executing the entire function. Otherwise the function 
+is executed and then the result is added to the cache. 
+Let's take an example of adding function with memoization,
+
+const memoizAddition = () => {
+  let cache = {};
+  return (value) => {
+    if (value in cache) {
+      console.log("Fetching from cache");
+      return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+    } else {
+      console.log("Calculating result");
+      let result = value + 20;
+      cache[value] = result;
+      return result;
+    }
+  };
+};
+// returned function from memoizAddition
+const addition = memoizAddition();
+console.log(addition(20)); //output: 40 calculated
+console.log(addition(20)); //output: 40 cached
+
+Memoization is a form of caching where the return value of a function 
+is cached based on its parameters. If the parameter of that function is 
+not changed, the cached version of the function is returned.
+
+Memoization is an optimization technique that can be used to reduce time consuming
+calculation by saving previous input to something called cache and returning the 
+result from it.
+
+sum
+i 0  0
+i 1  1
+i 2  3
+i 3  6
+i 4  10
+i 5  15
+
+
+Callback
+========
+
+A callback is a function that will be executed after another function 
+gets executed.
+
+
+function declaration
+=====================
+
+Function that can be used before it's declared.
+e.g.
+function calcAge(birthYear){
+  return 2037 - birthYear;
+}
+
+Function expression
+===================
+
+Essentially a function value stored in a variable.
+const calcAge = function (birthYear){
+  return 2037 - birthYear;
+}
+
+Arrow function
+==============
+
+Great for a quick one-line functions. Has no 'this' keyword.
+
+const calcAge = birthYear => 2037 - birthYear;
+
+Array
+=====
+
+There's no way of giving these elements a name, so we can't
+reference them by a name but only by order number in which 
+they appear in the array. To solve this problem we have a 
+data structure which is Object.
+Objects we have key value pair, we can give each values a name.
+
+//keys are called properties
+
+
+
+Dot notation (.):
+
+Dot notation is simpler and more concise.
+It's commonly used when you know the name of the property you want to access at the time of writing the code.
+Dot notation is preferred when the property name is a valid identifier and doesn't contain any special characters like spaces or dashes.
+Example:
+
+let obj = { name: 'John', age: 30 };
+
+console.log(obj.name); // Output: John
+
+
+Bracket notation ([]):
+
+Bracket notation is more versatile and allows you to access properties dynamically, using variables or expressions as property names.
+It's useful when the property name is stored in a variable or when the property name is not a valid identifier, such as when it contains spaces, dashes, or starts with a number.
+Bracket notation is also necessary when accessing properties with special characters or reserved keywords.
+Example:
+
+let obj = { 'first name': 'John', age: 30 };
+
+let propertyName = 'first name';
+console.log(obj[propertyName]); // Output: John
+
+Choosing between them:
+
+Use dot notation when you know the property name and it's a valid identifier without any special characters.
+Use bracket notation when you need to access properties dynamically, or when the property name is not a valid identifier or contains special characters.
+
+Project Card
+=============
+ 
+https://kinsta.com/knowledgebase/content-management-system/
+
+Declaration and initialization
+==============================
+
+int a, b, c;                       // declare 3 variables.
+
+int z = 35;                      // declare and initialize variable z 
+
+Difference Between var, let, and const
+
+JavaScript var
+===============
+
+1) Can be redeclared
+2) Can be reassigned a value
+3) Only have global and function scope
+4) Variables are hoisted on top and can be used anywhere
+5) Can be redeclared anywhere in the program
+
+JavaScript let
+===============
+
+1) Cannot be redeclared
+2) Can be reassigned a value
+3) Can have a block scope
+4) Variables must be initialized before use
+5) Can be redeclared inside a block
+
+
+function userDetails(username) {
+  if (username) {
+    console.log(salary); // undefined due to hoisting
+    console.log(age); // ReferenceError: Cannot access 'age' before initialization
+    let age = 30;
+    var salary = 10000;
+  }
+  console.log(salary); //10000 (accessible due to function scope)
+  console.log(age); //error: age is not defined(due to block scope)
+}
+userDetails("John");
+
+
+JavaScript const
+===============
+
+1) Cannot be redeclared
+2) Cannot reassign the value
+3) Can have a block scope
+4) Variables must be initialized before use
+5) Can never be redeclared
+		
+Math.ceil()
+===========
+
+The Math.ceil() static method always rounds up and returns the 
+smallest integer greater than or equal to a given number.
+
+console.log(Math.ceil(0.95));     // Expected output: 1
+
+console.log(Math.ceil(4));        // Expected output: 4
+
+console.log(Math.ceil(7.004));    // Expected output: 8
+
+console.log(Math.ceil(-7.004));   // Expected output: -7
+
+
+Math.ceil()
+===========
+
+Math.ceil(1.001)   o/p 2
+Math.ceil(1.00)    o/p 1
+Math.round(1.009)  o/p 1
+Math.round(1.4)    o/p 1
+Math.round(1.5)    o/p 2
+Math.ceil(1.1)     o/p 2
+Math.round(1.1)    o/p 1
+
+
+Math.trunc()
+============
+
+You can use the Math.trunc() method to remove the decimals of a number:
+    litres(1.4); // 0
+    litres(12.3); // 6
+    litres(0.82); // 0
+    litres(11.8); // 5
+    litres(1787); // 893
+
+console.log(Math.trunc(13.37)); // 13
+
+console.log(Math.trunc(42.84)); // 42
+
+console.log(Math.trunc(0.123)); // 0
+
+console.log(Math.trunc(-0.123)); // -0
+
+
+
+
+let dup =[1,2,3,6,1,2,3,];
+
+let newdp = dup.filter((item, index) => dup.indexOf(item) !== index)
+console.log(newdp, "dfd")
+
+Regex 
+======
+
+\b	Find a match at the beginning/end of a word, beginning like this: \bHI, end like this: HI\b
+\B	Find a match, but not at the beginning/end of a word
+
+/g	Perform a global match (find all)
+/i	Perform case-insensitive matching
+/m	Perform multiline matching
+
+\w	Find a word character
+\W	Find a non-word character
+
+
+slice()
+=======
+
+The slice() method returns selected elements in an array, as a new array.
+
+The slice() method selects from a given start, up to a (not inclusive) given end.
+
+The slice() method does not change the original array.
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1, 3);
+
+
+Math.random()
+==============
+
+The Math.random() static method returns a floating-point, 
+pseudo-random number that's greater than or equal to 0 and less than 1
+
+Return a random number between 0 (inclusive) and 10 (exclusive):
+
+console.log(getRandomInt(3)); // 0, 1 or 2
+
+console.log(getRandomInt(1)); // 0
+
+console.log(Math.random());  // a number from 0 to <1
+
+
+Math.floor()
+============
+
+The Math.floor() method rounds a number DOWN to the nearest integer.
+
+
+Shallow compare
+================
+
+When we use shallow compare to compare two objects, we only check if they have
+the same reference in memory. If they do, we consider them equal.
+
+const person1 = {
+    name: 'John',
+    age: 42,
+};
+const person2 = {
+    name: 'John',
+    age: 42,
+};
+const person3 = person1;
+
+console.log(person1 === person2);   // false
+console.log(person1 === person3);   // true
+
+
+call()
+=======
+
+In call method we pass arguments individually, comma separated.
+Call: The call() method invokes a function with a given this value 
+and arguments provided one by one
+
+apply()
+=======
+
+In apply() method we pass arguments in an array list.
+
+bind()
+======
+
+- It creates a copy of printFullName and it will bind that
+to name2 object and return a function.
+- It returns a method which calls later.
+- Used to bind and keep a copy of that method and use it later.
+
+let namee = {
+    firstName: "ABC",
+    lastName: "PQR"
+}
+
+let printFullName = function (hometown) {
+    console.log(this.firstName + ' ' + this.lastName + ' from ' + hometown)
+}
+
+//function borrwing
+printFullName.call(namee, "Mumbai")
+
+let name2 = {
+    firstName: 'Shreya',
+    lastName: "Kasare"
+}
+
+printFullName.call(name2, "Mah")
+printFullName.apply(name2, ["Mah"])
+
+let printMyName = printFullName.bind(name2, 'Mumbai', 'Maharashtra');
+console.log(printMyName);
+printMyName()
+
+JSON
+====
+
+JSON Server (React Project / jserv)
+============
+
+1) A common use of JSON is to (exchange data) to/from a web server.
+2) When receiving data from a web server, the data is always a string.
+3) Parse the data with JSON.parse(), and the data becomes a JavaScript 
+object.
+4) It is useful when you want to transmit data across a network.
+5) It is basically just a text file with an extension of .json, and 
+a MIME type of application/json
+
+Parsing: Converting a string to a native object
+>> JSON.parse(text);
+
+Stringification: Converting a native object to a 
+string so that it can be transmitted across the network
+>> JSON.stringify(object);
+
+slice()
+=======
+
+It selects the elements starting at the given start argument, and 
+ends at the given optional end argument without including the last 
+element.
+
+splice()
+=========
+
+The splice() method adds/removes items to/from an array, and then returns the removed item. 
+The first argument specifies the array position/index for insertion or deletion whereas the 
+optional second argument indicates the number of elements to be deleted. Each additional argument is added to the array.
+
+Lambda expressions or arrow functions
+=====================================
+
+- Shorter/concise syntax for a function expression and does not have 
+its own this, arguments, super, or new.target.
+
+- These functions are best suited for non-method functions, and they 
+cannot be used as constructors.
+
+
+First class function
+====================
+
+In Javascript, functions are first class objects. 
+First-class functions means when functions in that language are treated 
+like any other variable.
+
+For example, in such a language, a function can be passed as an argument 
+to other functions, can be returned by another function and can be assigned 
+as a value to a variable. 
+For example, in the below example, handler functions assigned to a listener
+
+const handler = () => console.log("This is a click handler function");
+document.addEventListener("click", handler);
+
+
+First order function
+====================
+
+A first-order function is a function that doesn’t accept another function 
+as an argument and doesn’t return a function as its return value.
+
+const firstOrder = () => console.log("I am a first order function!");
+
+
+Higher order function
+=====================
+
+A higher-order function is a function that accepts another function as an argument 
+or returns a function as a return value or both. 
+The syntactic structure of higher order function will be as follows.
+
+const firstOrderFunc = () =>
+console.log("Hello, I am a First order function");
+
+const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
+higherOrder(firstOrderFunc);
+
+Unary function
+===============
+
+A unary function (i.e. monadic) is a function that accepts exactly one argument. 
+It stands for a single argument accepted by a function.
+
+const unaryFunction = (a) => console.log(a + 10); 
+// Add 10 to the given argument and display the value
+
+
+Currying function
+==================
+
+Currying is the process of taking a function with multiple arguments and turning 
+it into a sequence of functions each with only a single argument. 
+Currying is named after a mathematician Haskell Curry. 
+By applying currying, an n-ary function turns into a unary function.
+
+const multiArgFunction = (a, b, c) => a + b + c;
+console.log(multiArgFunction(1, 2, 3)); // 6
+
+const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+curryUnaryFunction(1); // returns a function: b => c =>  1 + b + c
+curryUnaryFunction(1)(2); // returns a function: c => 3 + c
+curryUnaryFunction(1)(2)(3); // returns the number 6
+
+
+innerHTML
+=========
+
+The innerHTML property sets or returns the HTML content 
+(inner HTML) of an element.
+
+
+Pure function
+==============
+
+A Pure function is a function where the return value is only determined
+by its arguments without any side effects. i.e, If you call a function 
+with the same arguments 'n' number of times and 'n' number of places in 
+the application then it will always return the same value.
+
+function calculateGST(productPrice) {
+    return productPrice * 0.05;
+}
+console.log(calculateGST(15))
+
+Impure function
+===============
+
+let tax = 20;
+function calculateGST(productPrice) {
+    return productPrice * (tax / 100) + productPrice;
+}
+console.log(calculateGST(15))
+
+
+Temporal Dead Zone
+==================
+
+In the TDZ, a variable exists but it cannot be accessed until it 
+is not declared. This prevents the variable from being used 
+or accessed before a value is assigned to it.
+
+console.log(a);
+a=12;
+let a;
+
+a specific period or area of a block where a variable is inaccessible 
+until it has been initialized with a value.
+This behavior in JavaScript that occurs when declaring a variable with 
+the let and const keywords, but not with var. 
+In ECMAScript 6, accessing a let or const variable before its declaration 
+(within its scope) causes a ReferenceError.
+
+console.log(counter1); // undefined
+console.log(counter2); // ReferenceError Uncaught ReferenceError: Cannot access 'counter2' before initialization
+var counter1 = 1;
+let counter2 = 2;
+
+function somemethod() {
+  console.log(counter1); // undefined
+  console.log(counter2); // ReferenceError
+  var counter1 = 1;
+  let counter2 = 2;
+}
+
+
+IIFE (Immediately Invoked Function Expression)
+==============================================
+
+A JavaScript function that runs as soon as it is defined. 
+The signature of it would be as below:
+
+(function() {
+    // IIFE code block
+    var localVar = 'This is a local variable';
+    console.log(localVar); // Output: This is a local variable
+})();
+
+(function () {
+  var message = "IIFE";
+  console.log(message);
+})();
+console.log(message); //Error: message is not defined
+
+The primary reason to use an IIFE is to obtain data privacy because any 
+variables declared within the IIFE cannot be accessed by the outside world. 
+i.e, If you try to access variables from the IIFE then it throws an error 
+as below
+
+(function () {
+  var message = "IIFE";
+  console.log(message);
+})();
+console.log(message); //Error: message is not defined
+
+
+Decode or encode a URL
+=======================
+
+const url = "https://www.google.com/search?q=geeks for geeks";
+const encodedURL = encodeURI(url);
+console.log("encodedURL", encodedURL)
+// encodedURL https://www.google.com/search?q=geeks%20for%20geeks
+
+const decodedURL = decodeURI(encodedURL)
+console.log("decodedURL", decodedURL);
+
+
+const encodeURICpmp = encodeURIComponent(decodedURL)
+console.log("encodeURICpmp", encodeURICpmp);
+
+
+// decodedURL https://www.google.com/search?q=geeks for geeks
+
+
+console.time()
+
+
+Modules
+========
+
+Modules refer to small units of independent, reusable code.
+Most of the JavaScript modules export an object literal, a function, 
+or a constructor.
+
+Below are the list of benefits using modules in javascript ecosystem
+
+1. Maintainability
+2. Reusability
+3. Namespacing
+
+
+Scope
+=====
+
+Scope is the accessibility of variables, functions, and objects in 
+some particular part of your code during runtime. 
+Scope determines the visibility of variables and other resources in 
+areas of your code.
+
+
+setItem
+========
+The setItem() method of the Storage interface, when passed 
+a key name and value, will add that key to the given 
+Storage object, or update that key's value if it already 
+exists.
+
+keyName
+========
+
+A string containing the name of the key you want to 
+create/update.
+
+keyValue
+========
+
+A string containing the value you want to give the 
+key you are creating/updating.
+
+
+
+unshift
+=======
+
+> The unshift() method adds new elements to the (beginning) of an array.
+> The unshift() method overwrites the original array
+
+push()
+========
+
+> the push() method adds elements to the (end) of an array  
+
+pop
+===
+
+> pop() removes an element from the (end) of an array
+
+shift
+=====
+
+> shift() removes an element from the (beginning).
+
+
+splice()
+=========
+
+> if we want to remove an element from somewhere in the middle / Or remove more than 
+ one element at once? Well, that's where splice() comes in. splice() allows us to do just 
+ that: remove any number of consecutive elements from anywhere in an array.
+> splice() can take up to 3 parameters
+
+
+>>> How to find Operating system name?
+navigator.plateform
+
+468) What is the difference between substring and substr methods?
+The two parameters of substr() are start and length, while for 
+substring(), they are start and end.
+
+469)
+What is globalThis
+console.log(globalThis === globalThis.globalThis); // true (everywhere)
+console.log(window === window.window); // true (in a browser)
+console.log(self === self.self); // true (in a browser or a Web Worker)
+console.log(frames === frames.frames); // true (in a browser)
+console.log(global === global.global); // true (in Node.js)

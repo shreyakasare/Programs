@@ -1,0 +1,126 @@
+MongoDB
+
+> MongoDB is a document database designed for ease of
+development and scaling.
+
+> It is intutive and easy to use NoSQL database.
+
+Difference between mongo and mongod
+
+> mongo is the command-line shell that connects to a specific 
+instance of mongod.
+
+> mongod is the "Mongo Daemon" it's basically the host process
+for the database.
+
+
+
+Database > Collections (tables) : JavaScript objects
+e.g
+{
+    name : 'al',
+    age: 26,                        =======> Collection
+    status: 'D',
+    groups: ["abc", "xyz"]
+}
+
+Collections/document/field
+
+
+{
+    name : 'al',           <----- field value
+    age: 26,               <----- field value      =======> Document / Row
+    status: 'D',           <----- field value
+    groups: ["abc", "xyz"] <----- field value
+}
+
+================================Commands (Mongo Shell)======================================
+
+
+>>> show dbs | show databases : View all database 
+
+>>> use comments (comments: database name) : To switch to a 
+different database in MongoDB or to create a new db.
+
+>>> db : view current database
+
+>>> db.dropDatabase() : Delete Database
+
+                >>>>>>>>>>>>>>>MongoDB Commands (Collection)>>>>>>>>>>>>>>>>
+
+
+>>> show collections : View all database
+
+>>> db.createCollection('comments') : Creates new collection named 'comments'
+
+>>> db.comments1.drop() 
+db.<Collection name>.drop() : 
+To drop collection (table)
+
+
+                >>>>>>>>>>>>>>>MongoDB Commands (Rows)>>>>>>>>>>>>>>>>
+
+
+>>> Insert Rows 
+
+db.comments.insertOne({'name': 'ABC', 'lang': 'JavaScript', 'memeber_since': 7})
+
+db.comments.insertMany(
+    [
+        {'name': 'ABC', 'lang': 'JavaScript', 'memeber_since': 7},
+        {'name': 'ABC', 'lang': 'JavaScript', 'memeber_since': 7}
+    ]
+)
+
+insertOne, insertMany, or bulkWrite.
+
+
+>>> ObjectId : Primary key
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66cece080e9bd264923cb9f2'),
+    '1': ObjectId('66cece080e9bd264923cb9f3')
+  }
+}
+
+
+>>> db.comments.find() : To show all Document or Row in a collection
+
+>>> db.comments.find().pretty() : To format the output of a MongoDB
+
+>>> db.comments.find({'lang': 'JavaScript'}) : to search in a MongoDB Database
+
+>>> db.comments.find().pretty().limit(2): List the number of rows in output
+
+>>> db.comments.find().count() 
+
+>>> db.comments.find({name: "ABC"}).count() : o/p 6
+
+>>> db.comments.find().sort({memeber_since: 1}).pretty()
+
+>>> db.comments.findOne({name: "ABC"})
+
+>>> db.comments.updateOne({name: "ABC"},{ $set:{"name" : "ABC", "lang" : "React", "member_since" :15}})
+
+>>> db.comments.updateOne({name: "Shreya"},{ $set:{"name" : "ABC", "lang" : "React", "member_since" :15}},{upsert: true})
+upsert : to insert data forcefully in update command
+
+
+                        >>>>>>>>>>>>>>> MongoDB Increment Operator >>>>>>>>>>>>>>>>
+
+>>> db.comments.updateOne({name: "Shreya"},{ $inc:{ "member_since" :5}})
+
+
+                        >>>>>>>>>>>>>>> MongoDB Delete Operator >>>>>>>>>>>>>>>>
+
+
+>>> db.comments.deleteOne({"name" : "ABC"})
+
+>>> db.comments.find({"member_since" : {$lt : 1}})  :- lt less than
+
+
+
+
+

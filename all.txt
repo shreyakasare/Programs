@@ -1,0 +1,13 @@
+que and event que
+error code in node js
+exit code in node js
+middleware in node js
+optimization in server level
+use of child process
+why we use v8 engine
+
+
+javascript
+==========
+polyfills 
+method and function

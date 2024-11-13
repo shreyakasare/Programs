@@ -1,0 +1,221 @@
+MacBook Shortcuts
+
+Cmd + Option + J 
+Ctrl C
+
+Node js is a javascript runtime built on Google's open-source V8 javascript engine.
+V8 converts javascript code into machine code.
+
+
+terminal 
+node (to print anything)
+
+const name = 'shreya'
+name
+'shreya'
+> 5+7
+12
+
+>   .exit to exit the terminal
+
+>   to clear the terminal cls
+
+> 44-0 
+44
+
+> _+6
+50          //adds 44+6 = 50
+
+> _-30
+20          //subtracts 50-30 = 20
+
+> Ctrl + d to exit
+
+Shortcut
+========
+
+ctrl + C on mac also same key
+
+command + j dev tools
+
+
+>>> Module
+
+Consider modules to be the same as JavaScript libraries (react.js, vue.js, angular.js, chart.js etc).
+
+A set of functions you want to include in your application.
+
+To include a module, use the require() function with the name of the module:
+
+>>> Synchronous is also called as blocking code
+
+>>> Asynchronous is also called as non-blocking code
+
+>>> Thread is typically the smallest set or sequence of instructions that a computer 
+can manage and execute; 
+it is the basic unit of processor (CPU) utilization.
+Each thread belongs to exactly one process.
+Threads run in parallel improving the application performance. 
+A thread is also known as a lightweight process. 
+
+Single Thread
+
+        Initialize Program
+                |
+                \/
+        Execute top level code  (not inside any callback function) e.g console.log()
+                |
+                \/
+           Require Module
+                |
+                |
+                \/
+        Register event callback
+                |
+                |
+                \/
+           Start event loop     (where most of the work is done)
+
+Some tasks are too heavy to be execute in the event loop because they will block 
+the single thread, there's where the thread pool comes in.
+
+>>> Template string ``
+
+>>> Under the hood: internal workings
+
+>>> Tuple : an array of known length, whose values are of a known
+type, such as an array of three numbers: [45, 30, 90] .
+A tuple is an ordered sequence of elements that cannot be modified 
+once created. While tuples are similar to lists, they have some 
+key differences:
+
+Tuples are immutable - once created, you cannot modify them. Lists are mutable.
+Tuples use parentheses ( and ) while lists use square brackets [ and ].
+Tuples are generally used to store heterogeneous (different types) data while lists are used for homogeneous (same type) data.
+Tuples are supported natively in some programming languages like:
+
+Python, C#, Swift, Ruby
+And can be implemented using arrays in other languages like JavaScript.
+
+
+Node.js File System Module
+===========================
+
+The Node.js file system module allows you to work with the file 
+system on your computer.
+
+Common use for the File System module:
+
+Read files
+Create files
+Update files
+Delete files
+Rename files
+
+To include the File System module, use the require() method:
+
+var fs = require('fs');
+
+'utf-8'
+=======
+
+UTF-8 is an encoding system for Unicode. 
+Turn a string into an ArrayBuffer by using the UTF8 encoding
+
+PS D:\Shreya\Node> node index.js
+textInput test
+File Written
+PS D:\Shreya\Node> node index.js
+textInput test
+File Written
+data <Buffer 72 65 61 64 2d 74 68 69 73>
+
+API
+===
+
+API is a service from which we request some data.
+
+__dirname
+==========
+
+Location where current file is located.
+
+D:\Shreya\Node\1-node-farm> npm init 
+(Creates own packages)
+
+D:\Shreya\Node\1-node-farm> npm install slugify
+
+
+// "scripts": {
+//   "test": "echo \"Error: no test specified\" && exit 1"
+// },
+
+
+
+1-node-farm > npm run start
+
+>>> npm outdated
+
+
+>>> Extension 
+
+> Image Preview
+
+> Pug Beautify
+
+> Tab Nine
+
+>>> Request Response Model or Client Server Architecture
+
+           Request
+        ------------>
+Client                  Server
+        <------------
+            Response 
+
+
+   DNS
+   /\ 
+    |   |     
+(1) |   |  
+    |   |  
+    |   |   
+    |   \/                      HTTP Request (3)
+  
+    Client                ----------------------------->    Server
+  e.g browser             <----------------------------
+                              (2) TCP/IP socket connection
+  https://216.211.2.6.443
+                          <----------------------------
+all we get back is initial       HTTP Response (4)
+HTML file                                 
+
+
+HTTP : Hyper Text Transfer protocol
+TCP/IP : Transmission Control Protocol / Internet Protocol
+
+
+
+Streams
+========
+
+Used to process (read and write) data piece by piece (chunks), without completing 
+the whole read or write operation and therefore without keeping all the data
+in memory.
+eg. netflix and youtube 
+
+Perfect for handling large volumes of data eg videos.
+
+More efficient data processing in terms of memory (no need to keep all data in
+memory) and time (we don't have to wait until all the data is available).
+
+Using streams to process smaller chunks of data, makes it possible to read larger files.
+
+
+Syntax
+======
+
+>>> Create a server
+
+const server = require('http').createServer();
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let text = "How are you doing today?";
+    const myArray = text.split(" ");
+    console.log("myArray =>", myArray);
+    // o/p ["How","are","you","doing","today?"]
+
+    let word = myArray[1];
+    console.log("Word =>", word);
+    // o/p are
+
+    let myArray1 = text.split("");
+    console.log("myArray1 =>", myArray1);
+    // o/p
+    // ["H","o","w"," ","a","r","e"," ","y","o","u"," ","d","o","i","n","g"," ",
+    // "t","o","d","a","y","?"]
+
+    const myArray2 = text.split(" ", 3);
+    console.log("myArray2 =>", myArray2);
+    // o/p [ "How","are","you"]
+  </script>
+</html>

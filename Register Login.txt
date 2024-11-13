@@ -1,0 +1,45 @@
+npm run start register.js
+
+Login 
+=====
+
+Shreya
+asd@gmail.com
+1234
+
+=====
+
+- To use Loginone in this project use AppLoginOne.js file 
+- In index.js file change this code     
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+);
+
+
+tomorrow
+
+https://www.toptal.com/javascript/immutability-in-javascript-using-redux
+
+
+
+shallow and deep copy
+
+https://wesbos.com/javascript/08-data-types/object-references-vs-values
+
+https://legacy.reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html
+
+https://react.dev/learn/sharing-state-between-components
+
+https://react.dev/learn/keeping-components-pure
+
+https://react.dev/learn/removing-effect-dependencies
+
+https://github.com/sudheerj/reactjs-interview-questions?tab=readme-ov-file#what-are-pure-components
+
+https://github.com/sudheerj/javascript-interview-questions
+
+https://github.com/priya42bagde/JavaScriptCodingInterviewQuestions/blob/master/100Questions/100_JS_Que

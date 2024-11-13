@@ -1,0 +1,57 @@
+cmd 
+=====
+
+>>> type nul > app.js
+
+>>> To start project from the terminal
+D:\Shreya\Express\src> nodemon
+
+
+Express commands
+
+>>> npm init -y
+
+>>> node -v
+
+>>> PS D:\Shreya\Express> mkdir src
+
+>>> cls : clear
+
+
+Syntax
+=======
+
+>>> app.get(route, callback);
+app.get("/", (req,res) =>{})
+
+const express = require('express');
+
+const app = express();
+
+app.get("/", (req,res) =>{})
+
+app.get('/about', (req, res) => {
+    res.status(200).send("About")
+                OR
+    res.send("About")
+})
+
+The callback function has 2 parameters request (req) and response (res).
+The request object (req) represents the HTTP request and has properties for
+the request query string, parameters, body, HTTP header's etc.
+
+Similarly, the response object represents the HTTP response
+that the Express app sends when it recives an HTTP request.
+
+API
+====
+
+get -    read
+post -   create
+put -    update
+delete - delete
+
+Package
+========
+
+>> npm i hbs

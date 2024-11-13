@@ -1,0 +1,272 @@
+
+Type conversion
+
+>> javascriptIsFun = 'YES!';
+console.log(typeof javascriptIsFun);    //String
+
+>> let year;
+console.log(year);                      //undefined
+console.log(typeof year);               //undefined
+
+year = 1991;
+>> console.log(typeof year);               //number
+
+>> console.log(typeof null);               //object
+
+console.log(typeof NaN);               //number
+
+>> typeof [] : Object
+Object. Actually Array is derived from Object. 
+If you want to check array use Array.isArray(arr)
+
+>> typeof arguments : Object 
+Object. arguments are array like but not array. it 
+has length, can access by index but can't push pop, etc.
+
+>> console.log(true+false)
+1 here true -->> 1 & false -->> 0 then 1 + 0 -->> 1
+
+>> 2+true
+3. The plus operator between a number and a boolean or two 
+boolean will convert boolean to number. Hence, true converts to 1 and you get result of 2+1
+
+>> console.log(typeof undefined);   //undefined
+
+>> Value of -'34'+10
+// Answer: -24. minus(-) in front of a string is an 
+unary operator that will convert the string to a number 
+and will make it negative. Hence, -'34' becomes, -34 
+and then plus (+) will perform simple addition as both 
+the operands are number.
+
+>> Value of +'dude'
+NaN. The plus (+) operator in front of a string 
+is an unary operator that will try to convert the 
+string to number. Here, JavaScript will fail to convert
+the "dude" to a number and will produce (NaN).
+
+>> If you have var y = 1, x = y = typeof x; 
+What is the value of x?
+// Answer: "undefined"
+
+>>  for var a = (2, 3, 5); what is the value of a?
+// Answer: 5. The comma operator evaluates each of its 
+operands (from left to right) and returns the value of 
+the last operand. ref: MDN
+
+>> var a = (1, 5 - 1) * 2 what is the value of a?
+// Answer: 8
+
+(5-1) = 4
+4 * 2 = 8
+
+>> What is the value of !'bang'
+// Answer: false. ! is NOT.
+
+
+>> parseFloat('12.3.4') 
+Ans 12.3
+For the string '12.3.4', parseFloat will parse 
+up to the second period and stop, because a second 
+period is not valid in a floating-point number. 
+Therefore, it will return 12.3.
+
+>> Math.max([2,3,4,5]);
+// Answer: NaN==============================================================
+
+>> null == undefined
+// Answer: true
+
+
+>> var a = 2, b =3 what would be value of a && b
+// Answer: 3
+
+>> -5%2
+// Answer:-1. the result of remainder always get the symbol of first operand
+
+>> let a = [];
+let b = [];
+console.log(a==b); //false
+console.log(a===b); //false
+//Explaination : Here we are comparing memory location, not an array. 
+Memory location of 2 arrays are not same.
+
+>> var a = 2, b =3 what would be value of a && b
+Answer: 3
+
+>> let a = [];
+let b = a;
+console.log(a==b); //true
+console.log(a===b); //true
+Explaination : Here we are assigning a to b, where memory location is now same.
+
+>> let a = [1];
+let b = [1];
+console.log(a[0]==b[0]); //true
+console.log(a[0]===b[0]); //true
+//Explaination : Here we are comparing elements inside an array, not a memory 
+location. We specify the index so that's why element get compared.
+
+>> let data ={name: "priya"}
+console.log(delete data.name); //true
+console.log(data)//{}
+Explaination : delete will return either true or false.
+-----------------------------------
+
+>> let data = {name: "priya"}
+console.log(delete data); //false
+Explaination : We can delete the object property only. 
+We can't delete the object(i.e, data).
+
+>> 
+let data ={name:"priya"}
+let data1={city:"ABC"}
+data = {data, ...data1} //merge 2 objects
+console.log(data); // { "data" : {name:"priya"}, "city": "ABC"}
+//Explaination :Three dots will pop out the property from an 
+object and assign inside curly brackets. If we didn't do 
+destructing or spread operator then key will be object name(i.e, data) 
+and assign the value as whole object into it.
+------------------------------------------
+
+
+Interview programs
+
+1) 
+var a = 10;
+{
+    var a = 10;
+}
+let b = a;
+{
+ 
+let b = -20;
+}
+console.log(b)
+
+2) 
+function test()
+  {
+      salary =1200;
+      console.log(salary)
+  }
+
+test()
+o/p 1200 //treated as regular variable
+
+to avoid this use 'use strict'
+
+3)
+function test()
+{
+    console.log(test.abc)
+}
+
+test()
+
+test().abc = 400;
+test().abc = 400;
+
+test()
+o/p undefined
+undefined
+ERROR!
+
+test().abc = 400;
+           ^
+TypeError: Cannot set properties of undefined (setting 'abc')
+
+4) 
+console.log({} == {})
+console.log({} === {})
+
+o/p
+false
+false
+
+5)
+ let a = 10;
+    let b = new Number(10);  //b : Number { 10 }
+
+    let c = 10;
+
+    console.log(a === b) //false
+
+    console.log(b === c) //false
+
+6)
+
+function test(record){
+    if(record  == { age : 28}){
+        console.log("Adult");
+    }
+    else if(record  === { age : 28})
+    {
+        console.log("Adult")
+    }
+    else
+    {
+        console.log("No record")
+    }
+}
+
+test({age : 28})
+
+o/p No record
+
+
+To satisfy first Conditional
+
+let df = { age : 28};
+function test(record){
+    if(record  == df){
+        console.log("Adult");
+    }
+    else if(record  === { age : 28})
+    {
+        console.log("Adult")
+    }
+    else
+    {
+        console.log("No record")
+    }
+}
+
+test(df)
+
+
+7) 
+console.log(+true)
+console.log(!"test")
+
+o/p 
+1
+false
+
+8)
+
+var a = {};
+var b = {key : 'b'};
+var c = {key : 'c'};
+
+a[b] = 600;
+a[c] = 700;
+// b[b] = 400;
+
+console.log(a[c]);
+console.log(a[b]);
+console.log(b[b]);
+console.log(b[c]);
+
+o/p 
+700
+700
+undefined
+undefined
+
+
+9)
+let str = 'abcdef';
+let str = 123;
+
+

@@ -1,0 +1,6 @@
+<li>
+        <div class="flex">
+          <img src="./img/checkmark.png" alt="" class="w-5" />
+          <span> 5 cups chopped Porcini mushrooms </span>
+        </div>
+      </li>

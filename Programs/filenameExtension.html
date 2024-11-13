@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    debugger;
+    filename = "system.php";
+
+    console.log("filename =>", filename.split()); //o/p  ['system.php']
+    console.log("filename1 =>", filename.split(""));
+    //o/p  ["s", "y", "s", "t", "e", "m", ".", "p", "h", "p"]
+    console.log("filename2 =>", filename.split(" ")); //o/p  ['system.php']
+    console.log("filename3 =>", filename.split(",")); //o/p  ['system.php']
+    console.log("filename4 =>", filename.split(".")); //o/p  ['system.php']
+
+    console.log("filename4 =>", filename.split(".").pop()); // o/p ['system', 'php']
+
+    filename = "abc.js";
+
+    // Log the result of extracting the file extension using split and pop to the console
+    console.log(filename.split(".").pop());
+  </script>
+</html>
