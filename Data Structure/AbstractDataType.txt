@@ -1,0 +1,60 @@
+Abstract Data Type
+
+ADTs are entities that are definitions of data and operations
+but do not have implementation details.
+
+Real world example : Smartphone
+
+Abstract/logical view
+
+- 4 GB RAM
+- Snapdragon 2.2GHz processor
+- 5.5 inch LCD screen
+- Dual camera
+- Android 8.0
+
+- call()
+- text()
+- photo()
+- video()
+
+Implementation view
+
+class Smartphone {
+private: int ramSize;
+string processorName;
+float screenSize;
+string androidVersion;
+
+    public:
+        void call();
+        void text();
+        void photo();
+        void video();
+
+}
+
+
+
+Data structure example 
+
+index position      0         1          2          3     
+
+value               10        20         30         40
+
+memory addresss    1000      1004       1008       1012
+
+
+Abstract / logical view
+
+1. Store a set of elements of int type.
+2. Read elements by position i.e. index
+3. Modify elements by index.
+4. Perform sorting.
+
+
+Implementation view 
+
+int arr[5] = {1,2,3,4,5};
+cout<<arr[1];
+arr[2] = 10;

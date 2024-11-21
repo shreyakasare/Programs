@@ -1,0 +1,16 @@
+
+Binary Search Algorithm
+=======================
+
+Time and Space Complexity Analysis of Binary Search Algorithm
+
+Time complexity of Binary Search is O(log n), where n is the number 
+of elements in the array. 
+It divides the array in half at each step. 
+
+Space complexity is O(1) as it uses a constant amount of extra space.
+
+Aspect	                Complexity
+Time Complexity	        O(log n)
+Space Complexity	    O(1)
+
