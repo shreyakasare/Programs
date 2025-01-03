@@ -1831,3 +1831,28 @@ enforcing immutability by using plugins like Immutable.js, always
 using setState to make updates and returning new instances in 
 reducers when sending updated state values.
 
+
+From Steps.txt 
+===============
+
+
+The react event handling system is known as Synthetic Events. 
+The synthetic event is a cross-browser wrapper of the browser's native event.
+
+
+Learn
+========
+
+https://codesandbox.io/
+
+https://www.w3resource.com/javascript-exercises/fundamental/index.php#EDITOR
+
+https://redux-toolkit.js.org/api/configureStore
+
+
+Website Link:
+================
+>>> https://www.syncfusion.com/kb/11781/how-to-display-table-in-popup-window-using-javascript
+
+>>> https://hdtuto.com/article/react-js-get-current-date-and-time-example
+

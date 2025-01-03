@@ -254,3 +254,14 @@ To learn
 =========
 
 anonymous function, lexical scoping,
+
+https://www.w3resource.com/javascript-exercises/fundamental/index.php#EDITOR
+
+https://blog.logrocket.com/using-react-useeffect-hook-lifecycle-methods/
+
+Must read
+**********
+https://beta.reactjs.org/learn/passing-data-deeply-with-context
+
+https://www.w3resource.com/javascript-exercises/fundamental/index.php
+

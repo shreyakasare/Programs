@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .slideshow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    .slideshow img {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      <br />
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="errorMessages"></div>
+
+    <!-- slideshow -->
+    <div class="slideshow">
+      <button id="previousBtn">Previous</button>
+      <img id="image" src="image1.jpg"  />
+      <button id="nextBtn">Next</button>
+    </div>
+  </body>
+  <script>
+    // 1. Button Click Event
+    // Write a JavaScript program that creates a button and
+    // add a click event listener to log a message when it's clicked.
+
+    const button = document.createElement("button");
+
+    button.textContent = "Click";
+
+    button.addEventListener("click", () => {
+      console.log("Button Clicked");
+    });
+    document.body.appendChild(button);
+
+    // 2. Dropdown Menu Toggle
+
+    // Write a JavaScript program to create a dropdown
+    // menu that shows and hides its options when clicked.
+    const dropdown = document.createElement("select");
+    const options = ["Option 1", "Option 2", "Option 3"];
+    options.forEach((option) => {
+      const optionElement = document.createElement("option");
+      optionElement.textContent = option;
+      dropdown.appendChild(optionElement);
+    });
+    document.body.appendChild(dropdown);
+
+    // 3. Mouse Enter Background Change
+
+    // Write a JavaScript function that changes the background
+    // color of an element when a mouse enters it.
+
+    const colElement = document.createElement("div");
+    colElement.textContent = "Hover here";
+
+    colElement.addEventListener("mouseenter", () => {
+      colElement.style.width = "80px";
+      colElement.style.backgroundColor = "Green";
+    });
+
+    colElement.addEventListener("mouseleave", () => {
+      colElement.style.width = "80px";
+      colElement.style.backgroundColor = "white";
+    });
+
+    document.body.appendChild(colElement);
+
+    const formValidation = createElement("form");
+    document.body.appendChild(formValidation);
+    // 4. Form Validation with Error Message
+
+    // Write a JavaScript program that implements a "form"
+    // validation that displays an error message if a required
+    // field is left empty when submitting the form.
+
+    const form = document.getElementById("myForm");
+    const errorMessagesDiv = document.getElementById("errorMessages");
+    form.addEventListener("submit", (event) => {
+      debugger;
+      event.preventDefault();
+      errorMessagesDiv.innerHTML = "";
+      const requiredFields = form.querySelectorAll("[required]");
+      requiredFields.forEach((field) => {
+        if (field.value.trim() === "") {
+          const fieldName = field.getAttribute("name");
+          const errorMessage = document.createElement("p");
+          errorMessage.textContent = `${fieldName} is required`;
+          errorMessagesDiv.appendChild(errorMessage);
+        }
+      });
+    });
+
+    //     5. Image Slideshow Navigation
+
+    // Write a JavaScript program to create a slideshow that
+    // changes the displayed image when a next or previous button is clicked.
+
+    const images= ["image1.jpg", "image2.jpg", "image3.jpg"];
+    let currentIndex =0;
+
+    const previousBtn =document.getElementById('previousBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const image = document.getElementById('image');
+    previousBtn.addEventListener('click', () =>{
+      currentIndex = (currentIndex- 1 + images.length) % images.length;
+      
+    })
+
+
+
+    
+    previousBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      image.src = images[currentIndex];
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      image.src = images[currentIndex];
+    });
+  </script>
+
+  </script>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+
+<body>
+
+ 
+</body>
+</html> -->
